@@ -1,0 +1,55 @@
+@mixin breakpoints(
+    $cssProp: "padding",
+    $cssPropUnit: "px",
+    $values: (),
+    $mediaQueryType: "max-width"
+) {
+    @each $screen, $breakpoint in $values {
+        @media only screen and (max-width: #{$screen}px) {
+            #{$cssProp}: #{$breakpoint + $cssPropUnit};
+        }
+    }
+}
+
+@mixin background-img($position, $size: inherit) {
+    background-repeat: no-repeat;
+    background-position: $position;
+    background-size: $size;
+}
+
+@mixin size($width, $height: $width, $base: 10) {
+    width: $width;
+    height: $height;
+}
+
+@mixin flex($aligin: center, $justify: space-between) {
+    display: flex;
+    align-items: $aligin;
+    justify-content: $justify;
+}
+
+@mixin transition($time) {
+    -webkit-transition: $time ease-in-out;
+    -moz-transition: $time ease-in-out;
+    -o-transition: $time ease-in-out;
+    transition: $time ease-in-out;
+}
+
+@mixin rotate($deg) {
+    -webkit-transform: rotate($deg);
+    -moz-transform: rotate($deg);
+    -o-transform: rotate($deg);
+    transform: rotate($deg);
+}
+
+@mixin transform($x, $y) {
+    -ms-transform: translate($x, $y); /* IE 9 */
+    -webkit-transform: translate($x, $y); /* Safari */
+    transform: translate($x, $y);
+}
+
+@mixin box_shadow {
+    -moz-box-shadow: .2rem .2rem 3rem .2rem rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: .2rem .2rem 3rem .2rem rgba(0, 0, 0, 0.6);
+    box-shadow: .2rem .2rem 3rem .2rem rgba(0, 0, 0, 0.6);
+}

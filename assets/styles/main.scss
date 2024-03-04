@@ -1,0 +1,46 @@
+@charset "utf-8";
+@import "fonts.scss"; @import "mixins.scss"; @import "variables.scss";
+
+html {
+    @include breakpoints(
+        "font-size",
+        "",
+        (
+            1920: 10px,
+            1600: 0.66vw,
+            1280: 0.68vw,
+            768: 1.302vw,
+        )
+    );
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    max-width: 192rem;
+    margin: 0 auto;
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    overflow-y: auto;
+}
+
+img {
+    vertical-align: middle;
+    width: 100%;
+    height: auto;
+}
+  
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.container {
+    padding: 0 5rem;
+}
+
+button {
+    cursor: pointer;
+}

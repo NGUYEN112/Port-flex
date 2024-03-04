@@ -1,3 +1,55 @@
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+@media only screen and (max-width: 1920px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media only screen and (max-width: 1600px) {
+  html {
+    font-size: 0.66vw;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  html {
+    font-size: 0.68vw;
+  }
+}
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 1.302vw;
+  }
+}
 
+body {
+  width: 100%;
+  max-width: 192rem;
+  margin: 0 auto;
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  overflow-y: auto;
+}
+
+img {
+  vertical-align: middle;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.container {
+  padding: 0 5rem;
+}
+
+button {
+  cursor: pointer;
+}
 
 /*# sourceMappingURL=main.css.map */
