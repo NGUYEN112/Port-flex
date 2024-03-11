@@ -1,6 +1,6 @@
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 @media only screen and (max-width: 1920px) {
   html {
@@ -25,12 +25,10 @@ html {
 
 body {
   width: 100%;
-  max-width: 192rem;
   margin: 0 auto;
   position: relative;
   height: 100vh;
   min-height: 600px;
-  overflow-y: auto;
 }
 
 img {
@@ -44,12 +42,36 @@ a {
   text-transform: uppercase;
 }
 
-.container {
-  padding: 0 5rem;
-}
-
 button {
   cursor: pointer;
+}
+
+header {
+  margin-bottom: 10.4vh;
+}
+
+.container {
+  position: relative;
+  width: 180rem;
+  background-color: #d9d9d9;
+  margin: 0 auto;
+  height: 81.25vh;
+}
+
+.menuBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  color: #000;
+  z-index: 9;
+  background-color: #fff;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menuBtn span {
+  transform: rotate(90deg);
 }
 
 /*# sourceMappingURL=main.css.map */
