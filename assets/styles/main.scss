@@ -6,7 +6,7 @@ html {
         "font-size",
         "",
         (
-            1920: 10px,
+            1920: 0.52vw,
             1600: 0.66vw,
             1280: 0.68vw,
             768: 1.302vw,
@@ -22,17 +22,30 @@ body {
     position: relative;
     height: 100vh;
     min-height: 600px;
+    font-family: 'Helvetica Neue',sans-serif;;
+}
+
+.ffm-gilroy-l {
+    font-family: "SVN Gilroy Light";
+    font-weight: 300;
+}
+
+.ffm-gilroy-b {
+    font-family: "SVN Gilroy Bold";
+    font-weight: 600;
 }
 
 img {
-    vertical-align: middle;
+    // vertical-align: middle;
     width: 100%;
     height: auto;
 }
   
-a {
+a,button {
     text-decoration: none;
     text-transform: uppercase;
+    background-color: transparent;
+    border: none;
 }
 
 button {
@@ -40,28 +53,144 @@ button {
 }
 
 header {
-    margin-bottom: 10.4vh;
+    width: 30rem;
+    border: solid .1rem #000;
+    font-size: 2rem;
+    padding: 1rem 0;
+    text-align: center;
+    border-radius: 2.5rem;
+    margin: 1vh auto 9.4vh;
+    text-transform: uppercase;
+    position: relative;
+    &::after {
+        content: "";
+        border-right: solid .1rem #000;
+        height: 1vh;
+        position: absolute;
+        top: -1vh;
+        right: 3rem;
+    }
+    &::before {
+        content: "";
+        border-left: solid .1rem #000;
+        height: 1vh;
+        position: absolute;
+        top: -1vh;
+        left: 3rem;
+    }
+}
+
+/* sideBar style start */
+.sideBar {
+    position: absolute;
+    top: 0;
+    left: -30rem;
+    width: 30rem;
+    height: 100vh;
+    background-color: #c38888;
+    z-index: 99;
+    box-shadow: 0 0 .5rem .1rem #c38888;
+    @include flex(center,center);
+    transition: all ease-in-out 0.75s;
+    &__navList {
+        margin: auto 0;
+    }
+    .navLink {
+        a {
+            color: #fff;
+            font-size: 2rem;
+        }
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+    &__closeBtn {
+        position: absolute;
+        top: 7vh;
+        right: 2rem;    
+    }
+
+    &__contact {
+        position: absolute;
+        bottom: 10vh;
+        left: 50%;
+        transform: translateX(-50%);
+        @include flex(center,center);
+        gap: 1rem;
+        li {
+            @include size(4.5rem);
+            border-radius: 50%;
+            border: solid .2rem #fff;
+            @include flex(center,center);
+        }
+        img {
+            width: 3rem;
+        }
+    }
+}
+
+.sideBar.extend {
+    left: 0;
+}
+
+/* sideBar style end */
+
+button.closeSideBar {
+    position: fixed;
+    top: 0;
+    left: 30rem;
+    @include size(162rem,100vh);
+    z-index: -99;
+    display: none;
+}
+
+button.closeSideBar.show{
+    z-index: 99;
+    display: block;
 }
 
 .container {
-    position: relative;
-    // top: 14.8vh;
     width: 180rem;
-    background-color: #d9d9d9;
     margin: 0 auto;
     height: 81.25vh;
+    perspective: 250rem;
+    &__inner {
+        position: relative;
+        left: 0;
+        @include size(100%);
+        background-color: #d9d9d9;
+        transition: all ease-in-out .75s;
+        border-radius: 1.5rem;
+    }
+    &__inner.limitSide {
+        transform: rotateY(-20deg);
+        left: 20rem;
+    }
 }
+
 
 .menuBtn {
     position: absolute;
     top: 50%;
+    left: -7rem;
     transform: translateY(-50%) rotate(-90deg);
     color: #000;
     z-index: 9;
-    background-color: #fff; 
+    background-color: transparent; 
     text-transform: uppercase;
-    @include flex();
-    & span {
-        transform: rotate(90deg);
+    border: none;
+    @include flex(center,center);
+    font-size: 2rem;
+    font-weight: bold;
+    span {
+        @include size(2rem);
+        margin-left: .5rem;
     }
 }
+
+.content {
+    
+}
+
+@import "homeStyle.scss";
+@import "aboutStyle.scss";

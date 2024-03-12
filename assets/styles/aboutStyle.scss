@@ -1,0 +1,196 @@
+.aboutContent {
+    padding: 6rem;
+    display: none;
+    &__rack {
+        width: 100%;
+        @include flex(center,center);
+        span {
+            @include size(0%,.5rem);
+            background-color: #000;
+        }
+    }
+    &__listInfo {
+        @include flex(flex-start,space-between);
+        width: 100%;
+        transition: all ease-in-out .5s;
+    }
+    & .infoStage {
+        @include flex(center,flex-start,column);
+        position: relative;
+        transition: all ease-in-out .5s;
+        .line {
+            @include size(.4rem,0);
+            background-color: #000;
+            position: relative;
+        }
+        .line::after {
+            content: "";
+            @include size(1.5rem);
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #c38888;
+            border-radius: 50%;
+            opacity: 0;
+        }
+        .line::before {
+            content: "";
+            @include size(1.5rem);
+            position: absolute;
+            top: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #c38888;
+            border-radius: 50%;
+            opacity: 0;
+        }
+        .infoContent {
+            @include size(50rem,0rem);
+            border: solid 0rem #000;
+            border-radius: 5rem;
+            background-color: #fff;
+        }
+    }
+
+    .infoStage:nth-child(1) {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .infoStage:nth-child(2) {
+        z-index: 3;
+        .infoContent {
+            width: 55rem;
+        }
+    }
+
+    .infoStage:nth-child(3) {
+        left: -50%;
+        transform: translateX(50%);
+    }
+
+    /* animation start */
+
+    &__rack.firstState { 
+        span {
+            animation: rackFadeIn linear forwards .5s .5s;
+        }
+    }
+
+    .infoStage.secondState {
+        .line::before {
+            animation: fadeIn linear forwards .5s 1s;
+        }
+        .line {
+            animation: lineIn ease-in-out .5s forwards 1.5s;
+        }
+        .line::after {
+            animation: fadeIn linear forwards .5s 2s;
+        }
+        .infoContent {
+            animation: contentIn linear forwards .5s 2.5s;
+        }
+    }
+    .infoStage.secondState:first-child {
+        animation: midToLeft ease-in-out .5s forwards 3s;
+    }
+
+    .infoStage.secondState:last-child {
+        animation: midToRight ease-in-out .5s forwards 3s;
+    }
+
+    .listInfo.merge {
+        .infoStage:first-child {
+            animation: leftToMid ease-in-out .5s forwards;
+        }
+        
+        .infoStage:last-child {
+            animation: rightToMid ease-in-out .5s forwards;
+        }
+    }
+
+    /* animation end */
+}
+
+@keyframes rackFadeIn {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 50%;
+    }
+}
+
+@keyframes midToLeft {
+    0% {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    100% {
+        left: 0%;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes leftToMid {
+    0% {
+        left: 0%;
+        transform: translateX(0%);
+    }
+    100% {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes midToRight {
+    0% {
+        left: -50%;
+        transform: translateX(50%);
+    }
+    100% {
+        left: 0%;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes rightToMid {
+    0% {
+        left: 0%;
+        transform: translateX(0%);
+    }
+    100% {
+        left: -50%;
+        transform: translateX(50%);
+    }
+}
+
+@keyframes lineIn {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 11rem;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes contentIn {
+    0% {
+        height: 0;
+        border-width: 0;
+    }
+    100% {
+        height: 55rem;
+        border-width: .1rem;
+    }
+}

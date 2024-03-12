@@ -22,10 +22,11 @@
     height: $height;
 }
 
-@mixin flex($aligin: center, $justify: space-between) {
+@mixin flex($aligin: center, $justify: space-between, $direction: row) {
     display: flex;
     align-items: $aligin;
     justify-content: $justify;
+    flex-direction: $direction;
 }
 
 @mixin transition($time) {

@@ -2,49 +2,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Document</title>
     <link rel="stylesheet" href="/assets/styles/reset.css">
     <link rel="stylesheet" href="/assets/styles/main.css">
 </head>
 <body>
 
-    <header>Home Page</header>
+    <header class="ffm-gilroy-l">Home</header>
 
     <nav class="sideBar">
-        <ul class="sideBar__navList">
+        <button class="sideBar__closeBtn closeSideBarBtn"><img src="/assets/images/common/close.svg" alt=""></button>
+
+        <ul class="sideBar__navList ffm-gilroy-b">
             <li class="navLink">
-                <a href="#home"></a>
+                <a href="#home">Home</a>
             </li>
             <li class="navLink">
-                <a href="#about-us"></a>
+                <a href="#about-us">About us</a>
             </li>
             <li class="navLink">
-                <a href="#project"></a>
+                <a href="#project">Project</a>
             </li>
             <li class="navLink">
-                <a href="#exp"></a>
+                <a href="#exp">Experience</a>
+            </li>
+        </ul>
+
+        <ul class="sideBar__contact">
+            <li class="social">
+                <a href="#"><img src="/assets/images/common/fb.svg" alt=""></a>
+            </li>
+            <li class="social">
+                <a href="#"><img src="/assets/images/common/github.svg" alt=""></a>
+            </li>
+            <li class="social">
+                <a href="#"><img src="/assets/images/common/phone.svg" alt=""></a>
             </li>
         </ul>
     </nav>
 
+    <button class="closeSideBar closeSideBarBtn"></button>
+
     <div class="container">
+        <div class="container__inner">
+            <button class="menuBtn pc ffm-gilroy-b">Menu <span><img src="/assets/images/common/bar.svg" alt=""></span></button>
 
-        <button class="menuBtn pc">Menu <span><img src="/assets/images/common/bar.png" alt=""></span></button>
-
-        <section class="content homeContent" id="home">
-            <div class="container">
+            <section class="content homeContent" id="home">
                 <div class="homeContent__homeItem homeTitle">
-                    <h2>Phan Mai Gia Huy</h2>
-                    <h6>Sub title</h6>
+                    <h2 class="ffm-gilroy-b">Phan Mai Gia Huy</h2>
+                    <h6 class="ffm-gilroy-b">Sub title</h6>
                 </div>
                 <div class="homeContent__homeItem homeAvatar">
                     <img src="" alt="">
                 </div>
-            </div>
-        </section>
-    </div>
+            </section>
 
+            <section class="content aboutContent" id="about-us">
+                <div class="aboutContent__rack firstState">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="aboutContent__listInfo listInfo">
+                    <div class="infoStage secondState">
+                        <div class="line"></div>
+                        <div class="infoContent">
+
+                        </div>
+                    </div>
+                    <div class="infoStage secondState">
+                        <div class="line"></div>
+                        <div class="infoContent">
+                            
+                        </div>
+                    </div>
+                    <div class="infoStage secondState">
+                        <div class="line"></div>
+                        <div class="infoContent">
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="/assets/js/main.js"></script>
 </body>
 </html>

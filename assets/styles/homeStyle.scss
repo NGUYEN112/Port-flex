@@ -1,0 +1,15 @@
+.homeContent {
+    display: none;
+    height: 100%;
+    &__homeItem {
+        @include size(50%,100%);
+        @include flex(center,center,column);
+        h2 {
+            font-size: 6.4rem;
+            margin-bottom: 1rem;
+        }
+        h6 {
+            font-size: 3.6rem;
+        }
+    }
+}
