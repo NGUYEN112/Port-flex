@@ -1,6 +1,5 @@
 .aboutContent {
     padding: 6rem;
-    display: none;
     &__rack {
         width: 100%;
         @include flex(center,center);
@@ -70,48 +69,53 @@
         transform: translateX(50%);
     }
 
-    /* animation start */
+    
+}
 
-    &__rack.firstState { 
+.activeAni  {
+
+    /* animation start */
+    .aboutContent__rack { 
         span {
-            animation: rackFadeIn linear forwards .5s .5s;
+            animation: rackFadeIn linear forwards .5s;
         }
     }
 
-    .infoStage.secondState {
+    .infoStage {
         .line::before {
-            animation: fadeIn linear forwards .5s 1s;
+            animation: fadeIn linear forwards .5s .5s;
         }
         .line {
-            animation: lineIn ease-in-out .5s forwards 1.5s;
+            animation: lineIn ease-in-out .5s forwards 1s;
         }
         .line::after {
-            animation: fadeIn linear forwards .5s 2s;
+            animation: fadeIn linear forwards .5s 1.5s;
         }
         .infoContent {
-            animation: contentIn linear forwards .5s 2.5s;
+            animation: stageIn linear forwards .5s 2s;
         }
     }
-    .infoStage.secondState:first-child {
-        animation: midToLeft ease-in-out .5s forwards 3s;
+    .infoStage:first-child {
+        animation: midToLeft ease-in-out .5s forwards 2.5s;
     }
 
-    .infoStage.secondState:last-child {
-        animation: midToRight ease-in-out .5s forwards 3s;
+    .infoStage:last-child {
+        animation: midToRight ease-in-out .5s forwards 2.5s;
     }
-
-    .listInfo.merge {
-        .infoStage:first-child {
-            animation: leftToMid ease-in-out .5s forwards;
-        }
-        
-        .infoStage:last-child {
-            animation: rightToMid ease-in-out .5s forwards;
-        }
-    }
-
-    /* animation end */
+    
 }
+
+.listInfo.merge {
+    .infoStage:first-child {
+        animation: leftToMid ease-in-out .5s forwards;
+    }
+    
+    .infoStage:last-child {
+        animation: rightToMid ease-in-out .5s forwards;
+    }
+}
+
+ /* animation end */
 
 @keyframes rackFadeIn {
     0% {
@@ -184,7 +188,7 @@
     }
 }
 
-@keyframes contentIn {
+@keyframes stageIn {
     0% {
         height: 0;
         border-width: 0;

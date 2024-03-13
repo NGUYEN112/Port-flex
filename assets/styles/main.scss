@@ -1,6 +1,7 @@
 @charset "utf-8";
 @import "fonts.scss"; @import "mixins.scss"; @import "variables.scss";
-
+@import "homeStyle.scss";
+@import "aboutStyle.scss";
 html {
     @include breakpoints(
         "font-size",
@@ -16,6 +17,10 @@ html {
     overflow: hidden;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     width: 100%;
     margin: 0 auto;
@@ -24,6 +29,7 @@ body {
     min-height: 600px;
     font-family: 'Helvetica Neue',sans-serif;;
 }
+
 
 .ffm-gilroy-l {
     font-family: "SVN Gilroy Light";
@@ -154,10 +160,11 @@ button.closeSideBar.show{
     margin: 0 auto;
     height: 81.25vh;
     perspective: 250rem;
+    @include flex(center,center);
     &__inner {
         position: relative;
         left: 0;
-        @include size(100%);
+        @include size(0%,100%);
         background-color: #d9d9d9;
         transition: all ease-in-out .75s;
         border-radius: 1.5rem;
@@ -188,9 +195,38 @@ button.closeSideBar.show{
     }
 }
 
-.content {
-    
+
+/* animation start */
+
+.content.hiddenContent {
+    animation: fadeOut ease-in-out .5s forwards;
 }
 
-@import "homeStyle.scss";
-@import "aboutStyle.scss";
+.container__inner.opening {
+    animation: bgOpening ease-in-out .75s forwards;
+}
+/* animation end */
+
+@keyframes bgOpening {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-5rem);
+        display: none;
+    }
+}
+
+
+

@@ -17,6 +17,268 @@
   font-family: "helvetica";
   src: url(../fonts/Helvetica.woff) format("woff");
 }
+.homeContent {
+  height: 100%;
+  display: flex;
+}
+.homeContent__homeItem {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.homeContent__homeItem h2 {
+  font-size: 6.4rem;
+  margin-bottom: 1rem;
+  opacity: 0;
+}
+.homeContent__homeItem h6 {
+  font-size: 3.6rem;
+  opacity: 0;
+}
+.homeContent__homeItem.homeAvatar {
+  padding: 2.5rem 5rem;
+  opacity: 0;
+}
+.homeContent__homeItem.homeAvatar img {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* animation start */
+.homeContent.activeAni .homeTitle h2 {
+  animation: fadeInRight ease-in-out 0.25s 0.25s forwards;
+}
+.homeContent.activeAni .homeTitle h6 {
+  animation: fadeInLeft ease-in-out 0.25s 0.25s forwards;
+}
+.homeContent.activeAni .homeAvatar {
+  animation: fadeInUp ease-in-out 0.5s forwards;
+}
+
+/* animation end */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+.aboutContent {
+  padding: 6rem;
+}
+.aboutContent__rack {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.aboutContent__rack span {
+  width: 0%;
+  height: 0.5rem;
+  background-color: #000;
+}
+.aboutContent__listInfo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  transition: all ease-in-out 0.5s;
+}
+.aboutContent .infoStage {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  position: relative;
+  transition: all ease-in-out 0.5s;
+}
+.aboutContent .infoStage .line {
+  width: 0.4rem;
+  height: 0;
+  background-color: #000;
+  position: relative;
+}
+.aboutContent .infoStage .line::after {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #c38888;
+  border-radius: 50%;
+  opacity: 0;
+}
+.aboutContent .infoStage .line::before {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #c38888;
+  border-radius: 50%;
+  opacity: 0;
+}
+.aboutContent .infoStage .infoContent {
+  width: 50rem;
+  height: 0rem;
+  border: solid 0rem #000;
+  border-radius: 5rem;
+  background-color: #fff;
+}
+.aboutContent .infoStage:nth-child(1) {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.aboutContent .infoStage:nth-child(2) {
+  z-index: 3;
+}
+.aboutContent .infoStage:nth-child(2) .infoContent {
+  width: 55rem;
+}
+.aboutContent .infoStage:nth-child(3) {
+  left: -50%;
+  transform: translateX(50%);
+}
+
+.activeAni {
+  /* animation start */
+}
+.activeAni .aboutContent__rack span {
+  animation: rackFadeIn linear forwards 0.5s;
+}
+.activeAni .infoStage .line::before {
+  animation: fadeIn linear forwards 0.5s 0.5s;
+}
+.activeAni .infoStage .line {
+  animation: lineIn ease-in-out 0.5s forwards 1s;
+}
+.activeAni .infoStage .line::after {
+  animation: fadeIn linear forwards 0.5s 1.5s;
+}
+.activeAni .infoStage .infoContent {
+  animation: stageIn linear forwards 0.5s 2s;
+}
+.activeAni .infoStage:first-child {
+  animation: midToLeft ease-in-out 0.5s forwards 2.5s;
+}
+.activeAni .infoStage:last-child {
+  animation: midToRight ease-in-out 0.5s forwards 2.5s;
+}
+
+.listInfo.merge .infoStage:first-child {
+  animation: leftToMid ease-in-out 0.5s forwards;
+}
+.listInfo.merge .infoStage:last-child {
+  animation: rightToMid ease-in-out 0.5s forwards;
+}
+
+/* animation end */
+@keyframes rackFadeIn {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+@keyframes midToLeft {
+  0% {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  100% {
+    left: 0%;
+    transform: translateX(0%);
+  }
+}
+@keyframes leftToMid {
+  0% {
+    left: 0%;
+    transform: translateX(0%);
+  }
+  100% {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+@keyframes midToRight {
+  0% {
+    left: -50%;
+    transform: translateX(50%);
+  }
+  100% {
+    left: 0%;
+    transform: translateX(0%);
+  }
+}
+@keyframes rightToMid {
+  0% {
+    left: 0%;
+    transform: translateX(0%);
+  }
+  100% {
+    left: -50%;
+    transform: translateX(50%);
+  }
+}
+@keyframes lineIn {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 11rem;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes stageIn {
+  0% {
+    height: 0;
+    border-width: 0;
+  }
+  100% {
+    height: 55rem;
+    border-width: 0.1rem;
+  }
+}
 html {
   scroll-behavior: smooth;
   overflow: hidden;
@@ -40,6 +302,10 @@ html {
   html {
     font-size: 1.302vw;
   }
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -186,11 +452,15 @@ button.closeSideBar.show {
   margin: 0 auto;
   height: 81.25vh;
   perspective: 250rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 .container__inner {
   position: relative;
   left: 0;
-  width: 100%;
+  width: 0%;
   height: 100%;
   background-color: #d9d9d9;
   transition: all ease-in-out 0.75s;
@@ -224,211 +494,33 @@ button.closeSideBar.show {
   margin-left: 0.5rem;
 }
 
-.homeContent {
-  display: none;
-  height: 100%;
-}
-.homeContent__homeItem {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.homeContent__homeItem h2 {
-  font-size: 6.4rem;
-  margin-bottom: 1rem;
-}
-.homeContent__homeItem h6 {
-  font-size: 3.6rem;
+/* animation start */
+.content.hiddenContent {
+  animation: fadeOut ease-in-out 0.5s forwards;
 }
 
-.aboutContent {
-  padding: 6rem;
-  display: none;
-  /* animation start */
-  /* animation end */
-}
-.aboutContent__rack {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-}
-.aboutContent__rack span {
-  width: 0%;
-  height: 0.5rem;
-  background-color: #000;
-}
-.aboutContent__listInfo {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-direction: row;
-  width: 100%;
-  transition: all ease-in-out 0.5s;
-}
-.aboutContent .infoStage {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  position: relative;
-  transition: all ease-in-out 0.5s;
-}
-.aboutContent .infoStage .line {
-  width: 0.4rem;
-  height: 0;
-  background-color: #000;
-  position: relative;
-}
-.aboutContent .infoStage .line::after {
-  content: "";
-  width: 1.5rem;
-  height: 1.5rem;
-  position: absolute;
-  bottom: -1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #c38888;
-  border-radius: 50%;
-  opacity: 0;
-}
-.aboutContent .infoStage .line::before {
-  content: "";
-  width: 1.5rem;
-  height: 1.5rem;
-  position: absolute;
-  top: -1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #c38888;
-  border-radius: 50%;
-  opacity: 0;
-}
-.aboutContent .infoStage .infoContent {
-  width: 50rem;
-  height: 0rem;
-  border: solid 0rem #000;
-  border-radius: 5rem;
-  background-color: #fff;
-}
-.aboutContent .infoStage:nth-child(1) {
-  left: 50%;
-  transform: translateX(-50%);
-}
-.aboutContent .infoStage:nth-child(2) {
-  z-index: 3;
-}
-.aboutContent .infoStage:nth-child(2) .infoContent {
-  width: 55rem;
-}
-.aboutContent .infoStage:nth-child(3) {
-  left: -50%;
-  transform: translateX(50%);
-}
-.aboutContent__rack.firstState span {
-  animation: rackFadeIn linear forwards 0.5s 0.5s;
-}
-.aboutContent .infoStage.secondState .line::before {
-  animation: fadeIn linear forwards 0.5s 1s;
-}
-.aboutContent .infoStage.secondState .line {
-  animation: lineIn ease-in-out 0.5s forwards 1.5s;
-}
-.aboutContent .infoStage.secondState .line::after {
-  animation: fadeIn linear forwards 0.5s 2s;
-}
-.aboutContent .infoStage.secondState .infoContent {
-  animation: contentIn linear forwards 0.5s 2.5s;
-}
-.aboutContent .infoStage.secondState:first-child {
-  animation: midToLeft ease-in-out 0.5s forwards 3s;
-}
-.aboutContent .infoStage.secondState:last-child {
-  animation: midToRight ease-in-out 0.5s forwards 3s;
-}
-.aboutContent .listInfo.merge .infoStage:first-child {
-  animation: leftToMid ease-in-out 0.5s forwards;
-}
-.aboutContent .listInfo.merge .infoStage:last-child {
-  animation: rightToMid ease-in-out 0.5s forwards;
+.container__inner.opening {
+  animation: bgOpening ease-in-out 0.75s forwards;
 }
 
-@keyframes rackFadeIn {
+/* animation end */
+@keyframes bgOpening {
   0% {
     width: 0%;
   }
   100% {
-    width: 50%;
+    width: 100%;
   }
 }
-@keyframes midToLeft {
+@keyframes fadeOut {
   0% {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  100% {
-    left: 0%;
-    transform: translateX(0%);
-  }
-}
-@keyframes leftToMid {
-  0% {
-    left: 0%;
-    transform: translateX(0%);
-  }
-  100% {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-@keyframes midToRight {
-  0% {
-    left: -50%;
-    transform: translateX(50%);
-  }
-  100% {
-    left: 0%;
-    transform: translateX(0%);
-  }
-}
-@keyframes rightToMid {
-  0% {
-    left: 0%;
-    transform: translateX(0%);
-  }
-  100% {
-    left: -50%;
-    transform: translateX(50%);
-  }
-}
-@keyframes lineIn {
-  0% {
-    height: 0;
-  }
-  100% {
-    height: 11rem;
-  }
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
     opacity: 1;
-  }
-}
-@keyframes contentIn {
-  0% {
-    height: 0;
-    border-width: 0;
+    transform: translateY(0);
   }
   100% {
-    height: 55rem;
-    border-width: 0.1rem;
+    opacity: 0;
+    transform: translateY(-5rem);
+    display: none;
   }
 }
 
