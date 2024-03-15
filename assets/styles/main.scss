@@ -1,7 +1,6 @@
 @charset "utf-8";
 @import "fonts.scss"; @import "mixins.scss"; @import "variables.scss";
-@import "homeStyle.scss";
-@import "aboutStyle.scss";
+
 html {
     @include breakpoints(
         "font-size",
@@ -154,6 +153,10 @@ button.closeSideBar.show{
     z-index: 99;
     display: block;
 }
+
+@import "homeStyle.scss";
+@import "aboutStyle.scss";
+@import "projectStyle.scss";
 
 .container {
     width: 180rem;

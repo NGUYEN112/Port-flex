@@ -25,6 +25,13 @@ window.onload = function() {
                     this.document.querySelector(".aboutContent").classList.add("activeAni")
                 },750);
                 break;
+            case "#project":
+                $(".content").addClass("hiddenContent")
+                setTimeout(() => {
+                    this.document.querySelector(".projectContent").classList.remove("hiddenContent")
+                    this.document.querySelector(".projectContent").classList.add("activeAni")
+                },750);
+                break;
             default: 
                 $(".content").addClass("hiddenContent")
                 setTimeout(() => {
