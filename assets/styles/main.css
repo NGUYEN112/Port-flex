@@ -261,6 +261,10 @@ button.closeSideBar.show {
   width: 100%;
   height: 100%;
   padding: 6rem 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 .aboutContent__listInfo {
   display: flex;
@@ -278,13 +282,16 @@ button.closeSideBar.show {
   padding: 2.5rem;
   background-color: #fff;
 }
+.aboutContent .infoContent {
+  display: block;
+  width: 100%;
+  height: 50rem;
+}
 
 /** slick style **/
 .slick-list {
-  padding-top: 10% !important;
-  padding-bottom: 10% !important;
-  padding-left: 16% !important;
-  padding-right: 16% !important;
+  padding-left: 17% !important;
+  padding-right: 17% !important;
 }
 
 .slick-dots {
@@ -337,10 +344,19 @@ button.closeSideBar.show {
   perspective: 1000px;
 }
 
-.infoContent {
-  display: block;
-  width: 100%;
-  height: 50rem;
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9;
+}
+
+.slick-arrow.slick-next {
+  left: 100rem;
+}
+
+.slick-arrow.slick-prev {
+  right: 100rem;
 }
 
 /* animation start */

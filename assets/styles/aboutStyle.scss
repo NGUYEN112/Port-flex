@@ -1,6 +1,9 @@
 .aboutContent {
   @include size(100%, 100%);
   padding: 6rem 10rem;
+  @include flex(center,center);
+
+
   &__listInfo {
     @include flex(flex-start, space-between);
     @include size(90rem, 50rem);
@@ -14,19 +17,21 @@
     padding: 2.5rem;
     background-color: #fff;
   }
+
+  .infoContent {
+    display: block;
+    width: 100%;
+    height: 50rem;
+  }
 }
 
 /** slick style **/
-// .slick-slider {
-//   margin-left: -12%;
-//   margin-right: -12%;
-// }
 
 .slick-list {
-  padding-top: 10% !important;
-  padding-bottom: 10% !important;
-  padding-left: 16% !important;
-  padding-right: 16% !important;
+//   padding-top: 10% !important;
+//   padding-bottom: 10% !important;
+  padding-left: 17% !important;
+  padding-right: 17% !important;
 }
 
 .slick-dots {
@@ -78,12 +83,21 @@
     perspective: 1000px;
 }
 
-
-.infoContent {
-  display: block;
-  width: 100%;
-  height: 50rem;
+.slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9;
 }
+
+.slick-arrow.slick-next {
+    left: 100rem;
+}
+
+.slick-arrow.slick-prev {
+    right: 100rem;
+}
+
 
 
 /* animation start */
