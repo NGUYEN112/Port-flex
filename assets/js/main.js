@@ -30,6 +30,9 @@ window.onload = function() {
                     this.document.querySelector(".aboutContent").classList.add("endAni")
                     this.document.querySelector(".aboutContent").classList.remove("activeAni")
                 },2250);
+
+                document.querySelector("header").innerHTML = "About us"
+                document.title = "About Us | Portfolio - Phan Nguyen Hoai Nguyen"
                 break;
             case "#project":
                 $(".content").addClass("hiddenContent")
@@ -37,6 +40,9 @@ window.onload = function() {
                     this.document.querySelector(".projectContent").classList.remove("hiddenContent")
                     this.document.querySelector(".projectContent").classList.add("activeAni")
                 },750);
+
+                document.querySelector("header").innerHTML = "Projects"
+                document.title = "Projects | Portfolio - Phan Nguyen Hoai Nguyen"
                 break;
             default: 
                 $(".content").addClass("hiddenContent")
@@ -44,6 +50,9 @@ window.onload = function() {
                     this.document.querySelector(".homeContent").classList.remove("hiddenContent")
                     this.document.querySelector(".homeContent").classList.add("activeAni")
                 },750);
+
+                document.querySelector("header").innerHTML = "Home"
+                document.title = "Home | Portfolio - Phan Nguyen Hoai Nguyen"
                 break;
         }
     }
