@@ -425,40 +425,70 @@ button.closeSideBar.show {
     transform: translate3d(-20%, 0, -1rem);
   }
 }
-.projectContent.activeAni .projectContent__projectList .projectType span:last-child {
-  animation: fadeIn ease-in-out 0.75s 1.5s forwards;
+.projectContent {
+  width: 100%;
+  height: 100%;
+  padding: 5rem 10rem;
+  overflow-y: auto;
+  position: relative;
 }
-.projectContent.activeAni .projectContent__projectList:nth-child(2) .projectType span:first-child {
-  animation: rotateHalf ease-in-out 0.5s 1s forwards;
+.projectContent__projectGroup {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin-bottom: 3.5rem;
+  column-gap: 26.7rem;
 }
-.projectContent.activeAni .projectContent__rack {
-  animation: rotateQuarter ease-in-out 1s 1.25s forwards;
+.projectContent__projectGroup:nth-child(even) {
+  justify-content: flex-end;
+}
+.projectContent__projectGroup:last-child {
+  margin-bottom: 0;
+}
+.projectContent__projectItem {
+  background-color: #fff;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  cursor: pointer;
+  transition: all 0.5s linear;
+  position: relative;
+}
+.projectContent__projectItem:hover {
+  border-radius: 50%;
+}
+.projectContent__projectDetail {
+  position: absolute;
+  width: calc(100% - 1rem);
+  height: calc(100% - 1rem);
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 9;
+}
+.projectContent__detailInner {
+  width: 65%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 1.5rem;
+}
+.projectContent::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(138, 86, 86, 0.3);
+  background-color: #F5F5F5;
+}
+.projectContent::-webkit-scrollbar {
+  width: 10px;
+  background-color: #F5F5F5;
+}
+.projectContent::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border: 2px solid #eeeeee;
 }
 
-@keyframes rotateHalf {
-  0% {
-    transform-origin: center bottom;
-    transform: rotate(0deg);
-  }
-  100% {
-    transform-origin: center bottom;
-    transform: rotate(180deg);
-  }
-}
-@keyframes rotateQuarter {
-  0% {
-    transform: translateY(-50%);
-    width: 0;
-  }
-  50% {
-    transform: translateY(-50%);
-    width: 0;
-  }
-  100% {
-    transform: translateY(-50%);
-    width: calc(100% - 5rem);
-  }
-}
 .container {
   width: 180rem;
   margin: 0 auto;
