@@ -40,37 +40,3 @@
 }
 
 /* animation end */
-
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(5rem);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0rem);
-    }
-}
-
-@keyframes fadeInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(-5rem);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0rem);
-    }
-}
-
-@keyframes fadeInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(5rem);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0rem);
-    }
-}

@@ -10,7 +10,7 @@
         &:nth-child(even) {
             justify-content: flex-end;
         }
-        &:last-child {
+        &:nth-last-child(2) {
             margin-bottom: 0;
         }
     }
@@ -22,8 +22,8 @@
         cursor: pointer;
         transition: all .5s linear;
         position: relative;
+        opacity: 0;
         &:hover {
-            // @include size(17.5rem);
             border-radius: 50%;
         }
     }
@@ -32,8 +32,13 @@
         @include size(calc(100% - 1rem));
         top: .5rem;
         right: .5rem;
-        
+        opacity: 0;
+        display: none;
         z-index: 9;
+    }
+    &__projectDetail.active {
+        display: block;
+        animation: fadeInRight .75s forwards ease-in-out
     }
     &__detailInner {
         @include size(65%,100%);
@@ -60,6 +65,14 @@
     }
 }
 
+/* animation */
 .projectContent.activeAni {
-
+    .projectContent__projectItem {
+        animation: fadeInBottom .75s .5s forwards linear;
+    }
+    @for $i from 1 to 17 {
+        .projectContent__projectItem#prj-#{$i} {
+            animation-delay: .25s + ($i*.25);
+        }
+    }
 }

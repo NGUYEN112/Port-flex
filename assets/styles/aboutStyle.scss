@@ -146,37 +146,3 @@
 }
 
 /* animation end */
-
-@keyframes opacityIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes translateSNext {
-    100% {
-        transform: translate3d(40%, 0, -2rem);
-    }
-}
-
-@keyframes translateNext {
-    100% {
-        transform: translate3d(20%, 0, -1rem);
-    }
-}
-
-@keyframes translateSPrev {
-    100% {
-        transform: translate3d(-40%, 0, -2rem);
-    }
-}
-
-@keyframes translatePrev {
-    100% {
-        transform: translate3d(-20%, 0, -1rem);
-    }
-}
-

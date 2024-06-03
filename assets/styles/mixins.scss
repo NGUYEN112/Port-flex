@@ -54,3 +54,9 @@
     -webkit-box-shadow: .2rem .2rem 3rem .2rem rgba(0, 0, 0, 0.6);
     box-shadow: .2rem .2rem 3rem .2rem rgba(0, 0, 0, 0.6);
 }
+
+@mixin loopDelayItem($limitItem,$delay) {
+    @for $i from 1 to $limitItem {
+        
+    }
+}

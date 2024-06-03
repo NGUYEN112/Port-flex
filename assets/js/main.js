@@ -120,5 +120,12 @@ window.onload = function() {
         },
         /*infinite: false,*/
       });
+
+    $(".projectContent__projectItem").click(function() {
+        openPopProject($(this)[0].id)
+    })
+    function openPopProject(id) {
+        document.querySelector(".projectContent__projectDetail").classList.add("active")
+    }
 };
 
