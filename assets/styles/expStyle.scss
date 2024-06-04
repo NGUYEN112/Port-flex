@@ -1,0 +1,57 @@
+.expContent {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    &__contain {
+    }
+    &__detailList {
+
+    }
+    &__infoList {
+        position: absolute;
+        right: 0;
+        @include size(15rem);
+        bottom: 0;
+    }
+    &__listExpContain {
+        
+    }
+}
+
+.listExpContain {
+    &__logoItem {
+        @include size(15rem);
+        border-radius: 50%;
+        overflow: hidden;
+        position: absolute;
+        transition: all .5s linear;
+    }
+    &__logoItem:nth-child(1) {
+        transform: rotate(-75deg);
+        bottom: -18rem;
+        right: 26rem;
+    }
+    &__logoItem:nth-child(2) {
+        transform: rotate(-60deg);
+        bottom: 2rem;
+        right: 28rem;
+    }
+    &__logoItem:nth-child(3) {
+        transform: rotate(-45deg);
+        bottom: 20rem;
+        right: 20rem;
+    }
+    &__logoItem:nth-child(4) {
+        transform: rotate(-15deg);
+        bottom: 28rem;
+        right: 2rem;
+    }
+    &__logoItem:nth-child(n+5) {
+        transform: rotate(15deg);
+        bottom: 26rem;
+        right: -18rem;
+    }
+}
+
+//animation
+// .infoList__logoItem.current.

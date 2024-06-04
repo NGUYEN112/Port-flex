@@ -40,10 +40,26 @@
         display: block;
         animation: fadeInRight .75s forwards ease-in-out
     }
+    &__bg {
+        position: absolute;
+        @include size(100%);
+        top: 0;
+        left: 0;
+        background-color: #000;
+        opacity: .25;
+        z-index: 2;
+    }
     &__detailInner {
         @include size(65%,100%);
         background-color: #fff;
         border-radius: 1.5rem;
+        position: relative;
+        left: 0;
+        z-index: 5;
+        transition: all .5s linear;
+    }
+    &__detailInner.right {
+        left: 35%;
     }
 
     &::-webkit-scrollbar-track

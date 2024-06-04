@@ -23,80 +23,84 @@
     width: 100%;
     height: 50rem;
   }
-}
 
-/** slick style **/
+
+
+  /** slick style **/
 
 .slick-list {
-//   padding-top: 10% !important;
-//   padding-bottom: 10% !important;
-  padding-left: 17% !important;
-  padding-right: 17% !important;
-}
-
-.slick-dots {
-  text-align: right;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.slick-track {
-  max-width: 100% !important;
-  transform: translate3d(0, 0, 0) !important;
-  perspective: 100px;
-}
-
-.slick-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  opacity: 0;
-  width: 100% !important;
-  transform: translate3d(0, 0, 0);
-  transition: transform 1s , opacity 1s ;
-}
-
-.slick-snext,
-.slick-sprev,
-.slick-snext2,
-.slick-sprev2 {
-  display: block;
-}
-
-.slick-current {
-    position: relative;
-    display: block;
-    z-index: 2;
-}
-
-.slick-snext {
-    z-index: 1;
-    perspective: 1000px;
-}
-.slick-snext2 {
-    z-index: 0;
-    perspective: 1000px;
-}
-
-.slick-arrow {
+  //   padding-top: 10% !important;
+  //   padding-bottom: 10% !important;
+    padding-left: 17% !important;
+    padding-right: 17% !important;
+  }
+  
+  .slick-dots {
+    text-align: right;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 9;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .slick-track {
+    max-width: 100% !important;
+    transform: translate3d(0, 0, 0) !important;
+    perspective: 100px;
+  }
+  
+  .slick-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 0;
+    width: 100% !important;
+    transform: translate3d(0, 0, 0);
+    transition: transform 1s , opacity 1s ;
+  }
+  
+  .slick-snext,
+  .slick-sprev,
+  .slick-snext2,
+  .slick-sprev2 {
+    display: block;
+  }
+  
+  .slick-current {
+      position: relative;
+      display: block;
+      z-index: 2;
+  }
+  
+  .slick-snext {
+      z-index: 1;
+      perspective: 1000px;
+  }
+  .slick-snext2 {
+      z-index: 0;
+      perspective: 1000px;
+  }
+  
+  .slick-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 9;
+  }
+  
+  .slick-arrow.slick-next {
+      left: 100rem;
+  }
+  
+  .slick-arrow.slick-prev {
+      right: 100rem;
+  }
+  
 }
 
-.slick-arrow.slick-next {
-    left: 100rem;
-}
-
-.slick-arrow.slick-prev {
-    right: 100rem;
-}
 
 
 

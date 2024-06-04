@@ -44,6 +44,16 @@ window.onload = function() {
                 document.querySelector("header").innerHTML = "Projects"
                 document.title = "Projects | Portfolio - Phan Nguyen Hoai Nguyen"
                 break;
+            case "#exp":
+                $(".content").addClass("hiddenContent")
+                setTimeout(() => {
+                    this.document.querySelector(".expContent").classList.remove("hiddenContent")
+                    this.document.querySelector(".expContent").classList.add("activeAni")
+                },750);
+
+                document.querySelector("header").innerHTML = "Experience"
+                document.title = "Experience | Portfolio - Phan Nguyen Hoai Nguyen"
+                break;
             default: 
                 $(".content").addClass("hiddenContent")
                 setTimeout(() => {
@@ -64,6 +74,7 @@ window.onload = function() {
     clearTimeout()
 
 
+    /* slide about page */
     var listInfo = $('.listInfo');
     listInfo.on('init', function(event, slick, currentSlide) {
         var
@@ -120,6 +131,36 @@ window.onload = function() {
         },
         /*infinite: false,*/
       });
+    /* end slide */
+    /* slide exp page */
+    $(".listExpContain__logoItem").click(function() {
+        switch ($(this).index()) {
+            case 3:
+                nextSlide()
+                break;
+            case 1:
+                prevSlide()
+                break;
+            default:
+                break;
+        }
+    })
+    document.getElementById("next-exp").onclick =  function() {
+        nextSlide()
+    }
+    document.getElementById("prev-exp").onclick =  function() {
+        prevSlide()
+    }
+
+    function prevSlide() {
+        let lists = document.querySelectorAll(".listExpContain__logoItem");
+        document.getElementById("listExp").prepend(lists[lists.length -1])
+    }
+    function nextSlide() {
+        let lists = document.querySelectorAll(".listExpContain__logoItem");
+        document.getElementById("listExp").appendChild(lists[0])
+    }
+    /* end slide exp */
 
     $(".projectContent__projectItem").click(function() {
         openPopProject($(this)[0].id)
@@ -127,5 +168,7 @@ window.onload = function() {
     function openPopProject(id) {
         document.querySelector(".projectContent__projectDetail").classList.add("active")
     }
+
+
 };
 
