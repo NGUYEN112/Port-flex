@@ -38,7 +38,7 @@
     }
     &__projectDetail.active {
         display: block;
-        animation: fadeInRight .75s forwards ease-in-out
+        animation: fadeInRight .75s forwards ease-in-out;
     }
     &__bg {
         position: absolute;
@@ -48,6 +48,7 @@
         background-color: #000;
         opacity: .25;
         z-index: 2;
+        border-radius: 1.5rem
     }
     &__detailInner {
         @include size(65%,100%);

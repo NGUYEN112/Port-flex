@@ -132,7 +132,56 @@ window.onload = function() {
         /*infinite: false,*/
       });
     /* end slide */
+
+
     /* slide exp page */
+    const expInfo = {
+        "exp-1" : {
+            "title": "Title1",
+            "logo": "/assets",
+            "desc": [
+                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?",
+                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?",
+                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?"
+            ]
+        },
+        "exp-2" : {
+            "title": "Title2",
+            "logo": "/assets",
+            "desc": [
+                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?",
+                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?",
+                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?"
+            ]
+        },
+        "exp-3" : {
+            "title": "Title3",
+            "logo": "/assets",
+            "desc": [
+                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?",
+                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?",
+                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?"
+            ]
+        },
+        "exp-4" : {
+            "title": "Title4",
+            "logo": "/assets",
+            "desc": [
+                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?",
+                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?",
+                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?"
+            ]
+        },
+        "exp-5" : {
+            "title": "Title5",
+            "logo": "/assets",
+            "desc": [
+                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?",
+                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?",
+                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?"
+            ]
+        }
+    }
     $(".listExpContain__logoItem").click(function() {
         switch ($(this).index()) {
             case 3:
@@ -155,11 +204,28 @@ window.onload = function() {
     function prevSlide() {
         let lists = document.querySelectorAll(".listExpContain__logoItem");
         document.getElementById("listExp").prepend(lists[lists.length -1])
+        displayExp(lists[1].id)
     }
     function nextSlide() {
         let lists = document.querySelectorAll(".listExpContain__logoItem");
         document.getElementById("listExp").appendChild(lists[0])
+        displayExp(lists[3].id)
     }
+    /* display detail exp */
+    function displayExp(id) {
+        let expLogo = document.querySelector(".detailList__logo").children
+        let expTitle = document.querySelector(".detailList__title")
+        let expDetail = document.querySelector(".detailList__detail")
+
+        expTitle.innerHTML = expInfo[id].title;
+        expDetail.innerHTML = "";
+        for(let i = 0;i < expInfo[id].desc.length; i++) {
+            textTag = document.createElement("p")
+            textTag.innerHTML = expInfo[id].desc[i]
+            expDetail.append(textTag)
+        }
+    }
+    displayExp("exp-1")
     /* end slide exp */
 
     $(".projectContent__projectItem").click(function() {
@@ -169,6 +235,8 @@ window.onload = function() {
         document.querySelector(".projectContent__projectDetail").classList.add("active")
     }
 
-
+    $(".closePopPrj").click(function() {
+        $(".projectContent__projectDetail").removeClass("active")
+    })
 };
 
