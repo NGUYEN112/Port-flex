@@ -535,12 +535,14 @@ button.closeSideBar.show {
   top: 0.5rem;
   right: 0.5rem;
   opacity: 0;
-  display: none;
-  z-index: 9;
+  z-index: -99;
+  transform: translateX(-5rem);
+  transition: transform 1s ease-in-out;
 }
 .projectContent__projectDetail.active {
-  display: block;
-  animation: fadeInRight 0.75s forwards ease-in-out;
+  z-index: 9;
+  opacity: 1;
+  transform: translateX(0rem);
 }
 .projectContent__bg {
   position: absolute;
@@ -770,6 +772,16 @@ button.closeSideBar.show {
   100% {
     opacity: 1;
     transform: translateX(0rem);
+  }
+}
+@keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-5rem);
   }
 }
 @keyframes fadeInLeft {

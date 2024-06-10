@@ -43,6 +43,16 @@
         transform: translateX(0rem);
     }
 }
+@keyframes fadeOutRight {
+    0% {
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-5rem);
+    }
+}
 
 @keyframes fadeInLeft {
     0% {

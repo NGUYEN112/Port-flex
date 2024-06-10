@@ -33,12 +33,14 @@
         top: .5rem;
         right: .5rem;
         opacity: 0;
-        display: none;
-        z-index: 9;
+        z-index: -99;
+        transform: translateX(-5rem);
+        transition: transform 1s ease-in-out;
     }
     &__projectDetail.active {
-        display: block;
-        animation: fadeInRight .75s forwards ease-in-out;
+        z-index: 9;
+        opacity: 1;
+        transform: translateX(0rem);
     }
     &__bg {
         position: absolute;
