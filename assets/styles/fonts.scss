@@ -20,3 +20,25 @@
     font-family: "helvetica";
     src: url(../fonts/Helvetica.woff) format("woff");
 }
+
+@font-face {
+    font-family: "Segoe-UI";
+    src: url(../fonts/Segoe-UI.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Segoe-UIB";
+    src: url(../fonts/Segoe-UI-Bold.ttf);
+}
+
+@font-face {
+    font-family: "WenKai";
+    src: url(../fonts/LXGWWenKaiTC-Regular.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "WenKai-B";
+    src: url(../fonts/LXGWWenKaiTC-Bold.ttf);
+}

@@ -58,27 +58,56 @@
         left: 0;
         z-index: 5;
         transition: all .5s linear;
+        padding: 7rem 5rem;
+    }
+    &__detailInner .closePopPrj {
+        @include size(4rem);
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
     }
     &__detailInner.right {
         left: 35%;
     }
 
-    &::-webkit-scrollbar-track
-    {
-        -webkit-box-shadow: inset 0 0 6px rgba(138, 86, 86, 0.3);
-        background-color: #F5F5F5;
-    }   
-
-    &::-webkit-scrollbar
-    {
-        width: 10px;
-        background-color: #F5F5F5;
+    &__detailContent {
+        height: 100%;
     }
+}
 
-    &::-webkit-scrollbar-thumb
-    {
-        background-color: #fff;
-        border: 2px solid #eeeeee;
+.detailContent {
+    h2,h4 {
+        font: bold 4.5rem/5rem "Segoe-UI";
+    }
+    h4 {
+        font-size: 2.5rem;
+        font-weight: 3.5rem;
+        margin-bottom: 5rem;
+    }
+    p, ul li {
+        font: 400 2.5rem "WenKai";
+    }
+    ul {
+        height: 75%;
+        overflow: auto;
+    }
+    ul li {
+        position: relative;
+        text-indent: 2.5rem;
+        font-size: 2rem;
+        font-family: "WenKai";
+    }
+    ul li:not(:last-child) {
+        margin-bottom: .5rem;
+    }
+    ul li::before {
+        content: "";
+        @include size(.5rem);
+        background-color: #333;
+        border-radius: 50%;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
     }
 }
 

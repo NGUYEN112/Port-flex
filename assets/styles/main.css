@@ -17,6 +17,24 @@
   font-family: "helvetica";
   src: url(../fonts/Helvetica.woff) format("woff");
 }
+@font-face {
+  font-family: "Segoe-UI";
+  src: url(../fonts/Segoe-UI.ttf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Segoe-UIB";
+  src: url(../fonts/Segoe-UI-Bold.ttf);
+}
+@font-face {
+  font-family: "WenKai";
+  src: url(../fonts/LXGWWenKaiTC-Regular.ttf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: "WenKai-B";
+  src: url(../fonts/LXGWWenKaiTC-Bold.ttf);
+}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -102,6 +120,21 @@ body {
   height: 100vh;
   min-height: 600px;
   font-family: "Helvetica Neue", sans-serif;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(138, 86, 86, 0.3);
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border: 2px solid #eeeeee;
 }
 
 .ffm-gilroy-l {
@@ -283,7 +316,8 @@ button.closeSideBar.show {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row; /** slick style **/
+  flex-direction: row;
+  /** slick style **/
 }
 .aboutContent__listInfo {
   display: flex;
@@ -291,7 +325,7 @@ button.closeSideBar.show {
   justify-content: space-between;
   flex-direction: row;
   width: 90rem;
-  height: 50rem;
+  height: 64.7rem;
   margin: 0 auto;
   transition: all ease-in-out 0.5s;
 }
@@ -300,11 +334,63 @@ button.closeSideBar.show {
   border-radius: 2.5rem;
   padding: 2.5rem;
   background-color: #fff;
+  cursor: pointer;
+}
+.aboutContent .infoTitle {
+  font-size: 3.5rem;
+  line-height: 4.5rem;
+  font-family: "SVN Gilroy Bold";
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
 }
 .aboutContent .infoContent {
   display: block;
   width: 100%;
   height: 50rem;
+  overflow: auto;
+}
+.aboutContent .infoContent h4 {
+  font: bold 2.5rem/3rem "WenKai-B";
+  margin-bottom: 1rem;
+}
+.aboutContent .infoContent p {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  font-family: "WenKai";
+}
+.aboutContent .infoContent p:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+.aboutContent .infoContent p i {
+  margin-right: 1rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.aboutContent .infoContent p i img {
+  width: auto;
+  height: 2rem;
+}
+.aboutContent .infoContent.indent p {
+  text-indent: 2.5rem;
+}
+.aboutContent .infoContent.indent p:before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
 }
 .aboutContent .slick-list {
   padding-left: 17% !important;
@@ -476,21 +562,55 @@ button.closeSideBar.show {
   left: 0;
   z-index: 5;
   transition: all 0.5s linear;
+  padding: 7rem 5rem;
+}
+.projectContent__detailInner .closePopPrj {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 .projectContent__detailInner.right {
   left: 35%;
 }
-.projectContent::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(138, 86, 86, 0.3);
-  background-color: #F5F5F5;
+.projectContent__detailContent {
+  height: 100%;
 }
-.projectContent::-webkit-scrollbar {
-  width: 10px;
-  background-color: #F5F5F5;
+
+.detailContent h2, .detailContent h4 {
+  font: bold 4.5rem/5rem "Segoe-UI";
 }
-.projectContent::-webkit-scrollbar-thumb {
-  background-color: #fff;
-  border: 2px solid #eeeeee;
+.detailContent h4 {
+  font-size: 2.5rem;
+  font-weight: 3.5rem;
+  margin-bottom: 5rem;
+}
+.detailContent p, .detailContent ul li {
+  font: 400 2.5rem "WenKai";
+}
+.detailContent ul {
+  height: 75%;
+  overflow: auto;
+}
+.detailContent ul li {
+  position: relative;
+  text-indent: 2.5rem;
+  font-size: 2rem;
+  font-family: "WenKai";
+}
+.detailContent ul li:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+.detailContent ul li::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
 }
 
 /* animation */
@@ -602,14 +722,12 @@ button.closeSideBar.show {
 }
 
 .detailList__title {
-  font-size: 5rem;
-  line-height: 6rem;
   text-align: center;
   margin-bottom: 5rem;
+  font: 700 5rem/6rem "Segoe-UIB";
 }
 .detailList__detail {
-  font-size: 2.2rem;
-  line-height: 2.5rem;
+  font: 400 2.2rem/2.5rem "WenKai";
 }
 .detailList__detail p:not(:last-child) {
   margin-bottom: 1.2rem;

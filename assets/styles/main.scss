@@ -32,6 +32,24 @@ body {
     font-family: 'Helvetica Neue',sans-serif;;
 }
 
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(138, 86, 86, 0.3);
+    background-color: #F5F5F5;
+}   
+
+::-webkit-scrollbar
+{
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background-color: #fff;
+    border: 2px solid #eeeeee;
+}
+
 
 .ffm-gilroy-l {
     font-family: "SVN Gilroy Light";

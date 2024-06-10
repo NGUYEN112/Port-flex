@@ -239,4 +239,3 @@ window.onload = function() {
         $(".projectContent__projectDetail").removeClass("active")
     })
 };
-
