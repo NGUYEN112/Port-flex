@@ -523,6 +523,9 @@ button.closeSideBar.show {
 .projectContent__projectItem:hover {
   border-radius: 50%;
 }
+.projectContent__projectItem.active {
+  border-radius: 50%;
+}
 .projectContent__projectDetail {
   position: absolute;
   width: calc(100% - 1rem);
@@ -573,6 +576,16 @@ button.closeSideBar.show {
 }
 .projectContent__detailContent {
   height: 100%;
+}
+.projectContent__controlBtn {
+  position: absolute;
+  top: 50%;
+  right: -25rem;
+  transform: translateY(-50%);
+  animation: moveLeftPrj 1s ease-in-out forwards;
+}
+.projectContent__detailInner.right .projectContent__controlBtn {
+  animation: moveRightPrj 1s ease-in-out forwards;
 }
 
 .detailContent h2, .detailContent h4 {
@@ -833,6 +846,43 @@ button.closeSideBar.show {
   100% {
     opacity: 2;
     transform: translateY(0rem);
+  }
+}
+@keyframes moveRightPrj {
+  0% {
+    opacity: 1;
+    right: -25rem;
+    left: 0;
+  }
+  25% {
+    opacity: 0;
+    right: -25rem;
+    left: 0;
+  }
+  50% {
+    opacity: 0;
+    left: -25rem;
+    right: 0;
+  }
+  100% {
+    opacity: 1;
+    left: -25rem;
+    right: 0;
+  }
+}
+@keyframes moveLeftPrj {
+  0% {
+    opacity: 0;
+    left: -25rem;
+    right: 0;
+  }
+  50% {
+    opacity: 0;
+    right: -25rem;
+  }
+  100% {
+    opacity: 1;
+    right: -25rem;
   }
 }
 .container {

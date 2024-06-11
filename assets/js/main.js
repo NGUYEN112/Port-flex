@@ -228,14 +228,154 @@ window.onload = function() {
     displayExp("exp-1")
     /* end slide exp */
 
+
+    /* project script */
+    const projectInfo = {
+        "prj-1" : {
+            "name": "project 1",
+            "subName": "project web",
+            "link": "Lorem ipsum",
+            "info": [
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+            ]
+        },
+        "prj-2" : {
+            "name": "project 2",
+            "subName": "project web",
+            "link": "Lorem ipsum",
+            "info": [
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+            ]
+        },
+        "prj-3" : {
+            "name": "project 3",
+            "subName": "project web",
+            "link": "Lorem ipsum",
+            "info": [
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+            ]
+        },
+        "prj-4" : {
+            "name": "project 4",
+            "subName": "project web",
+            "link": "Lorem ipsum",
+            "info": [
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+            ]
+        },
+        "prj-5" : {
+            "name": "project 5",
+            "subName": "project web",
+            "link": "Lorem ipsum",
+            "info": [
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+            ]
+        },
+        "prj-6" : {
+            "name": "project 6",
+            "subName": "project web",
+            "link": "Lorem ipsum",
+            "info": [
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+            ]
+        },
+        "prj-7" : {
+            "name": "project 7",
+            "subName": "project web",
+            "link": "Lorem ipsum",
+            "info": [
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+                "Lorem ipsum dolor sit",
+            ]
+        },
+    }
     $(".projectContent__projectItem").click(function() {
         openPopProject($(this)[0].id)
     })
     function openPopProject(id) {
         document.querySelector(".projectContent__projectDetail").classList.add("active")
+        $(".projectContent__detailInner").hasClass("right") ?
+        $(".projectContent__detailInner").removeClass("right") :
+        $(".projectContent__detailInner").addClass("right")
+
+        $(".projectContent__projectItem").removeClass("active")
+        $(".projectContent__projectItem#"+id).addClass("active")
+
+
+        const keys = Object.keys(projectInfo)
+
+        var currentIndex = keys.indexOf(id)
+        let nextId, prevId;
+        if(currentIndex === keys.length - 1) {
+            nextId = keys[0]
+            prevId = keys[currentIndex - 1]
+        }else if (currentIndex === 0) {
+            nextId = keys[currentIndex + 1]
+            prevId = keys[keys.length - 1]
+        } else {
+            nextId = keys[currentIndex + 1]
+            prevId = keys[currentIndex - 1]
+        }
+        $(".prj-prev").attr("value",prevId)
+        $(".prj-next").attr("value",nextId)
+
+        var title = document.createElement("h2")
+        var subTitle = document.createElement("h4")
+        var link = document.createElement("p")
+        var infoTitle = document.createElement("p")
+        var listContain = document.createElement("ul")
+
+        title.innerHTML = projectInfo[id].name
+        subTitle.innerHTML = projectInfo[id].subName
+        link.innerHTML = "Project link: " + projectInfo[id].link
+        infoTitle.innerHTML = "Project information:"
+        projectInfo[id].info.forEach(ele => {
+            let infoItem = document.createElement("li")
+            infoItem.innerHTML = ele
+            listContain.append(infoItem)
+        });
+        const detailContent = document.querySelector(".projectContent__detailContent.detailContent")
+        detailContent.innerHTML = ""
+        detailContent.append(title)
+        detailContent.append(subTitle)
+        detailContent.append(link)
+        detailContent.append(infoTitle)
+        detailContent.append(listContain)
     }
+
+    $(".prj-btn").click(function() {
+        openPopProject($(this)[0].value)
+    })
 
     $(".closePopPrj").click(function() {
         $(".projectContent__projectDetail").removeClass("active")
+        $(".projectContent__projectItem").removeClass("active")
     })
 };

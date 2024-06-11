@@ -27,6 +27,9 @@
             border-radius: 50%;
         }
     }
+    &__projectItem.active {
+        border-radius: 50%;
+    }
     &__projectDetail{
         position: absolute;
         @include size(calc(100% - 1rem));
@@ -74,6 +77,18 @@
 
     &__detailContent {
         height: 100%;
+    }
+    &__controlBtn {
+        position: absolute;
+        top: 50%;
+        right: -25rem;
+        transform: translateY(-50%);
+        animation: moveLeftPrj 1s ease-in-out forwards;
+    }
+    &__detailInner.right {
+        .projectContent__controlBtn {
+            animation: moveRightPrj 1s ease-in-out forwards;
+        }
     }
 }
 

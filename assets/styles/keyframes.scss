@@ -119,3 +119,42 @@
         transform: translateY(0rem);
     }
 }
+
+@keyframes moveRightPrj {
+    0% {
+        opacity: 1;
+        right: -25rem;
+        left: 0;
+    }
+    25% {
+        opacity: 0;
+        right: -25rem;
+        left: 0;
+    }
+    50% {
+        opacity: 0;
+        left: -25rem;
+        right: 0;
+    }
+    100% {
+        opacity: 1;
+        left: -25rem;
+        right: 0;
+    }
+}
+
+@keyframes moveLeftPrj {
+    0% {
+        opacity: 0;
+        left: -25rem;
+        right: 0;
+    }
+    50% {
+        opacity: 0;
+        right: -25rem;
+    }
+    100% {
+        opacity: 1;
+        right: -25rem;
+    }
+}
