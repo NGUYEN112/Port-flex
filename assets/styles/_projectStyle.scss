@@ -1,0 +1,336 @@
+.projectContent {
+    @include size(100%);
+    padding: 5rem 10rem;
+    overflow-y: auto;
+    position: relative;
+    @include flex(center,flex-start);
+    // &__projectGroup {
+    //     @include flex(center, flex-start);
+    //     margin-bottom: 3.5rem;
+    //     column-gap: 26.7rem;
+    //     &:nth-child(even) {
+    //         justify-content: flex-end;
+    //     }
+    //     &:nth-last-child(2) {
+    //         margin-bottom: 0;
+    //     }
+    // }
+    // &__projectItem {
+    //     background-color: #fff;
+    //     @include size(15rem);
+    //     border-radius: 2.5rem;
+    //     @include flex(center,center);
+    //     cursor: pointer;
+    //     transition: all .5s linear;
+    //     position: relative;
+    //     opacity: 0;
+    //     &:hover {
+    //         border-radius: 50%;
+    //     }
+    // }
+    // &__projectItem.active {
+    //     border-radius: 50%;
+    // }
+    // &__projectDetail{
+    //     position: absolute;
+    //     @include size(calc(100% - 1rem));
+    //     top: .5rem;
+    //     right: .5rem;
+    //     opacity: 0;
+    //     z-index: -99;
+    //     transform: translateX(-5rem);
+    //     transition: transform 1s ease-in-out;
+    // }
+    // &__projectDetail.active {
+    //     z-index: 9;
+    //     opacity: 1;
+    //     transform: translateX(0rem);
+    // }
+    // &__bg {
+    //     position: absolute;
+    //     @include size(100%);
+    //     top: 0;
+    //     left: 0;
+    //     background-color: #000;
+    //     opacity: .25;
+    //     z-index: 2;
+    //     border-radius: 1.5rem
+    // }
+    // &__detailInner {
+    //     @include size(65%,100%);
+    //     background-color: #fff;
+    //     border-radius: 1.5rem;
+    //     position: relative;
+    //     left: 0;
+    //     z-index: 5;
+    //     transition: all .5s linear;
+    //     padding: 7rem 5rem;
+    // }
+    // &__detailInner .closePopPrj {
+    //     @include size(4rem);
+    //     position: absolute;
+    //     top: 1rem;
+    //     right: 1rem;
+    // }
+    // &__detailInner.right {
+    //     left: 35%;
+    // }
+
+    // &__detailContent {
+    //     height: 100%;
+    // }
+    // &__controlBtn {
+    //     position: absolute;
+    //     top: 50%;
+    //     right: -25rem;
+    //     transform: translateY(-50%);
+    //     animation: moveLeftPrj 1s ease-in-out forwards;
+    // }
+    // &__detailInner.right {
+    //     .projectContent__controlBtn {
+    //         animation: moveRightPrj 1s ease-in-out forwards;
+    //     }
+    // }
+    &__projectHead {
+        @include size(10rem, 100%);
+        @include flex(center,space-between, column);
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            @include size(.5rem, 100%);
+            background-color: #fff;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+        }
+    }
+    &__projectBody {
+        @include size(calc(100% - 10rem), 100%);
+        margin-left: -5rem;
+        @include flex(center,center,column);
+        gap: 5rem;
+    }
+    &__projectPopup {
+        position: absolute;
+        right: 0;
+        top: 0;
+        @include size(100%);
+        @include flex(center, flex-end);
+        padding: 2rem;
+    }
+}
+
+.projectHead {
+    &__type {
+        background-color: #fff;
+        border-radius: 2rem;
+        @include size(10rem, 35%);
+        @include flex(center,center);
+        padding: 0 3rem;
+        position: relative;
+        & h3 {
+            font: 600 1.5rem "Segoe-UI";
+            letter-spacing: .25rem;
+            color: $primaryTextColor;
+            text-align: center;
+            line-height: 2;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 0; 
+            height: 0; 
+            border-top: 11rem solid transparent;
+            border-bottom: 11rem solid transparent; 
+            
+            border-left:2.5rem solid #fff; 
+            transform: translateY(-50%);
+        }
+    }
+    
+}
+
+.projectBody {
+    &__prjLine {
+        @include size(100%, .5rem);
+        background-color: #fff;
+    }
+    &__prjList {
+        @include flex(center,center);
+        gap: 5rem;
+    }
+    &__prjItem {
+        @include size(15rem,15rem);
+        background-color: #fff;
+        border-radius: 2rem;
+        padding: 3rem 2rem;
+        position: relative;
+        @include flex(center, space-between, column);
+        &::before {
+            content: "";
+            position: absolute;
+            top: 100%;
+            right: 7.25rem;
+            @include size(.5rem, 5rem);
+            background-color: #fff;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: calc(100% + 5rem - .5rem);
+            right: 6.75rem;
+            @include size(1.5rem);
+            background-color: $secondaryTextColor;
+            border-radius: 50%;
+        } 
+        .projectName {
+            @include fontStyle("Segoe-UI",1.5rem, 600);
+            text-align: center;
+            color: $primaryTextColor;
+            letter-spacing: .25rem;
+        }
+        button {
+            width: 100%;
+            background-color: $primaryTextColor;
+            @include fontStyle("Segoe-UI",1.5rem, 500, 1.5);
+            border: solid .1rem $primaryTextColor;
+            color: #fff;
+            border-radius: 1.5rem;
+            letter-spacing: .25rem;
+        }
+        button:hover,
+        button:focus {
+            background-color: #fff;
+            color: $primaryTextColor;
+        }
+    }
+    &__prjItem.bottom {
+        &::before {
+            content: "";
+            position: absolute;
+            top: -5rem;
+            right: 7.25rem;
+            @include size(.5rem, 5rem);
+            background-color: #fff;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: calc(-5rem - 1rem);
+            right: 6.75rem;
+            @include size(1.5rem);
+            background-color: $secondaryTextColor;
+            border-radius: 50%;
+        } 
+    }
+}
+
+.projectPopup {
+    display: none;
+    &__bg {
+        position: absolute;
+        @include size(100%);
+        top: 0;
+        left: 0;
+        background-color: #000;
+        opacity: .25;
+        z-index: 2;
+    }
+    &__content {
+        @include size(80%, 100%);
+        z-index: 3;
+        position: relative;
+        background-color: #fff;
+        border-radius: 1.5rem;
+        transition: all .5s linear;
+        padding: 7rem 5rem;
+    }
+    &__close {
+        width: 4rem;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+    .prjTitle {
+        @include fontStyle("Segoe-UI", 3rem, 600);
+        color: $primaryTextColor;
+        text-align: center;
+        margin-bottom: 5rem;
+        text-transform: uppercase;
+        letter-spacing: .25rem;
+    }
+    .prjLink {
+        @include fontStyle("Segoe-UI", 1.5rem, 500);
+        margin-right: 4rem;
+        text-decoration: underline;
+    }
+    h6 {
+        @include fontStyle("Segoe-UI", 2rem, 600);
+        color: $primaryTextColor;
+        margin-bottom: 1rem;
+        margin-top: 3rem;
+    }
+    .prjList {
+        padding-left: 2rem;
+        list-style: circle;
+    }
+    .prjList li {
+        @include fontStyle("Segoe-UI", 1.5rem, 400);
+        color: $secondaryTextColor;
+        margin-bottom: .5rem;
+    }
+}
+.projectPopup.show {
+    display: flex;
+}
+
+// .detailContent {
+//     h2,h4 {
+//         font: bold 4.5rem/5rem "Segoe-UI";
+//     }
+//     h4 {
+//         font-size: 2.5rem;
+//         font-weight: 3.5rem;
+//         margin-bottom: 5rem;
+//     }
+//     p, ul li {
+//         font: 400 2.5rem "WenKai";
+//     }
+//     ul {
+//         height: 75%;
+//         overflow: auto;
+//     }
+//     ul li {
+//         position: relative;
+//         text-indent: 2.5rem;
+//         font-size: 2rem;
+//         font-family: "WenKai";
+//     }
+//     ul li:not(:last-child) {
+//         margin-bottom: .5rem;
+//     }
+//     ul li::before {
+//         content: "";
+//         @include size(.5rem);
+//         background-color: #333;
+//         border-radius: 50%;
+//         position: absolute;
+//         top: 1rem;
+//         left: 1rem;
+//     }
+// }
+
+/* animation */
+.projectContent.activeAni {
+    .projectContent__projectItem {
+        animation: fadeInBottom .75s .5s forwards linear;
+    }
+    @for $i from 1 to 17 {
+        .projectContent__projectItem#prj-#{$i} {
+            animation-delay: .25s + ($i*.25);
+        }
+    }
+}

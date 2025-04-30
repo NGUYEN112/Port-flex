@@ -5,18 +5,18 @@
 @import "reset.scss";
 
 html {
+    scroll-behavior: smooth;
+    overflow: hidden;
     @include breakpoints(
         "font-size",
         "",
         (
             1920: 0.52vw,
-            1600: 0.66vw,
-            1280: 0.68vw,
-            768: 1.302vw,
+            // 1600: 0.66vw,
+            // 1280: 0.68vw,
+            768: 1.302vw
         )
     );
-    scroll-behavior: smooth;
-    overflow: hidden;
 }
 
 * {
@@ -82,17 +82,22 @@ button {
 
 header {
     width: 30rem;
-    border: solid .1rem #000;
+    border: solid .1rem #a87676;
     font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1rem;
     padding: 1rem 0;
     text-align: center;
     border-radius: 2.5rem;
     margin: 1vh auto 9.4vh;
     text-transform: uppercase;
     position: relative;
+    background: -webkit-linear-gradient( left,#a87676,#ca8787, #e1acac, #ffd0d0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     &::after {
         content: "";
-        border-right: solid .1rem #000;
+        border-right: solid .1rem #a87676;
         height: 1vh;
         position: absolute;
         top: -1vh;
@@ -100,7 +105,7 @@ header {
     }
     &::before {
         content: "";
-        border-left: solid .1rem #000;
+        border-left: solid .1rem #a87676;
         height: 1vh;
         position: absolute;
         top: -1vh;
@@ -115,7 +120,7 @@ header {
     left: -30rem;
     width: 30rem;
     height: 100vh;
-    background-color: #c38888;
+    background-image: linear-gradient(to bottom, #921a40, #c75b7a, #d9abab, #f4d9d0);
     z-index: 99;
     box-shadow: 0 0 .5rem .1rem #c38888;
     @include flex(center,center);
@@ -209,7 +214,7 @@ button.closeSideBar.show{
     top: 50%;
     left: -7rem;
     transform: translateY(-50%) rotate(-90deg);
-    color: #000;
+    color: $primaryTextColor;
     z-index: 9;
     background-color: transparent; 
     text-transform: uppercase;
@@ -220,7 +225,15 @@ button.closeSideBar.show{
     span {
         @include size(2rem);
         margin-left: .5rem;
+        img {
+            filter: invert(62%) sepia(29%) saturate(638%) hue-rotate(314deg) brightness(103%) contrast(97%);
+        }
     }
+}
+
+.content {
+    background-image: linear-gradient(to left, #a87676,#ca8787, #e1acac, #ffd0d0);
+
 }
 
 

@@ -137,48 +137,49 @@ window.onload = function() {
     /* slide exp page */
     const expInfo = {
         "exp-1" : {
-            "title": "Title1",
+            "title": "Tomosia Da Nang",
             "logo": "/assets",
             "desc": [
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?",
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?",
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?"
+                "Learned and worked with Nuxt.js and Vue.js in a QR code-related project",
             ]
         },
         "exp-2" : {
-            "title": "Title2",
+            "title": "Gosu Hue",
             "logo": "/assets",
             "desc": [
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?",
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?",
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?"
+                "Strengthened knowledge and experience with Vue.js through game event website projects",
+                "Improved understanding and experience with APIs",
             ]
         },
         "exp-3" : {
-            "title": "Title3",
+            "title": "DGW Asia Hue Brand",
             "logo": "/assets",
             "desc": [
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?",
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?",
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?"
+                "Gained more experience using design tools such as: AI, Xd, InDesign, Figma",
+                "Received training and learned about TypeScript and React.js",
             ]
         },
         "exp-4" : {
-            "title": "Title4",
+            "title": "Tomosia Da Nang",
             "logo": "/assets",
             "desc": [
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?",
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?",
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?"
+                "Learned and worked with Nuxt.js and Vue.js in a QR code-related project",
             ]
         },
         "exp-5" : {
-            "title": "Title5",
+            "title": "Gosu Hue",
             "logo": "/assets",
             "desc": [
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?",
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?",
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet hic, ut corrupti veniam ipsa omnis odio? Vero praesentium assumenda corrupti natus earum quas laudantium iusto?"
+                "Strengthened knowledge and experience with Vue.js through game event website projects",
+                "Improved understanding and experience with APIs",
+            ]
+        },
+        "exp-6" : {
+            "title": "DGW Asia Hue Brand",
+            "logo": "/assets",
+            "desc": [
+                "Gained more experience using design tools such as: AI, Xd, InDesign, Figma",
+                "Received training and learned about TypeScript and React.js",
             ]
         }
     }
@@ -229,153 +230,115 @@ window.onload = function() {
     /* end slide exp */
 
 
+
+   
     /* project script */
     const projectInfo = {
         "prj-1" : {
-            "name": "project 1",
-            "subName": "project web",
-            "link": "Lorem ipsum",
-            "info": [
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
+            "name": "The Qira",
+            "githubLink": false,
+            "link": "https://Theqira.com",
+            "tech": [
+                "HTML5 - CSS3",
+                "SASS",
+                "JAVASCRIPT",
+                "JQUERY",
+            ],
+            "detail": [
+                "A personal portfolio website of a designer",
             ]
         },
         "prj-2" : {
-            "name": "project 2",
-            "subName": "project web",
-            "link": "Lorem ipsum",
-            "info": [
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
+            "name": "Elite",
+            "githubLink": "https://github.com/NGUYEN112/elite",
+            "link": "https://nguyen112.github.io/elite/",
+            "tech": [
+                "HTML5 - CSS3",
+                "SASS",
+                "JAVASCRIPT",
+                "JQUERY",
+            ],
+            "detail": [
+                "A static website of team of professionals that have over 40 years experience in the real estate industry in South Florida and we look forward to servicing your community's needs.",
             ]
         },
         "prj-3" : {
-            "name": "project 3",
-            "subName": "project web",
-            "link": "Lorem ipsum",
-            "info": [
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
+            "name": "Criptcon",
+            "githubLink": "https://github.com/NGUYEN112/criptcon",
+            "link": "https://nguyen112.github.io/criptcon/",
+            "tech": [
+                "HTML5 - CSS3",
+                "SASS",
+                "JAVASCRIPT",
+                "JQUERY",
+            ],
+            "detail": [
+                "A sample static website on the topic of crypto to be used as a template."
             ]
         },
         "prj-4" : {
-            "name": "project 4",
-            "subName": "project web",
-            "link": "Lorem ipsum",
-            "info": [
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
+            "name": "Cinerama Cinema",
+            "githubLink": "bit.ly/2UwUwTJ",
+            "link": "cinerama-cinema.hẻokuapp.com",
+            "tech": [
+                "HTML5 - CSS3 - SCSS",
+                "PHP - Laravel",
+                "TypeScript - Angular",
+                "MySQL",
+                "Bootstrap 5",
+            ],
+            "detail": [
+                "Search for movie information and book tickets",
+                "Manage movies, screening schedules, and users",
+                "Manage tickets and revenue",
+                "Assign roles for staff management",
             ]
         },
         "prj-5" : {
-            "name": "project 5",
-            "subName": "project web",
-            "link": "Lorem ipsum",
-            "info": [
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
+            "name": "Favorite Music",
+            "githubLink": "https://github.com/NGUYEN112/react-vite-firestore-music",
+            "link": "https://react-vite-music-app.netlify.app/",
+            "tech": [
+                "Html5 - CSS3 - SCSS",
+                "TypeScript - ReactJS",
+                "Firebase/firestore",
+            ],
+            "detail": [
+                "ncludes basic features of a music player",
+                "Allows users to create personal albums and add new songs via shared links (e.g., Dropbox)",
             ]
-        },
-        "prj-6" : {
-            "name": "project 6",
-            "subName": "project web",
-            "link": "Lorem ipsum",
-            "info": [
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-            ]
-        },
-        "prj-7" : {
-            "name": "project 7",
-            "subName": "project web",
-            "link": "Lorem ipsum",
-            "info": [
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-                "Lorem ipsum dolor sit",
-            ]
-        },
+        }
     }
-    $(".projectContent__projectItem").click(function() {
+    $(".openProjectPop").click(function() {
+        $(".projectPopup").addClass("show")
         openPopProject($(this)[0].id)
     })
+    $(".projectPopup__close").click(function() {
+        $(".projectPopup").removeClass("show")
+    })
     function openPopProject(id) {
-        document.querySelector(".projectContent__projectDetail").classList.add("active")
-        $(".projectContent__detailInner").hasClass("right") ?
-        $(".projectContent__detailInner").removeClass("right") :
-        $(".projectContent__detailInner").addClass("right")
+        console.log(1);
+        
+        var title = document.querySelector(".prjTitle")
+        var githubLink = document.getElementById("github")
+        var link = document.getElementById("webLink")
+        var techList = document.getElementById("tech")
+        techList.innerHTML = ""
+        var detailList = document.getElementById("detail")
+        detailList.innerHTML = ""
 
-        $(".projectContent__projectItem").removeClass("active")
-        $(".projectContent__projectItem#"+id).addClass("active")
-
-
-        const keys = Object.keys(projectInfo)
-
-        var currentIndex = keys.indexOf(id)
-        let nextId, prevId;
-        if(currentIndex === keys.length - 1) {
-            nextId = keys[0]
-            prevId = keys[currentIndex - 1]
-        }else if (currentIndex === 0) {
-            nextId = keys[currentIndex + 1]
-            prevId = keys[keys.length - 1]
-        } else {
-            nextId = keys[currentIndex + 1]
-            prevId = keys[currentIndex - 1]
-        }
-        $(".prj-prev").attr("value",prevId)
-        $(".prj-next").attr("value",nextId)
-
-        var title = document.createElement("h2")
-        var subTitle = document.createElement("h4")
-        var link = document.createElement("p")
-        var infoTitle = document.createElement("p")
-        var listContain = document.createElement("ul")
-
-        title.innerHTML = projectInfo[id].name
-        subTitle.innerHTML = projectInfo[id].subName
-        link.innerHTML = "Project link: " + projectInfo[id].link
-        infoTitle.innerHTML = "Project information:"
-        projectInfo[id].info.forEach(ele => {
+        title.innerText = projectInfo[id].name
+        githubLink.href = projectInfo[id].githubLink
+        link.href = projectInfo[id].link
+        projectInfo[id].tech.forEach(ele => {
             let infoItem = document.createElement("li")
             infoItem.innerHTML = ele
-            listContain.append(infoItem)
+            techList.append(infoItem)
         });
-        const detailContent = document.querySelector(".projectContent__detailContent.detailContent")
-        detailContent.innerHTML = ""
-        detailContent.append(title)
-        detailContent.append(subTitle)
-        detailContent.append(link)
-        detailContent.append(infoTitle)
-        detailContent.append(listContain)
+        projectInfo[id].detail.forEach(ele => {
+            let infoItem = document.createElement("li")
+            infoItem.innerHTML = ele
+            detailList.append(infoItem)
+        });
     }
-
-    $(".prj-btn").click(function() {
-        openPopProject($(this)[0].value)
-    })
-
-    $(".closePopPrj").click(function() {
-        $(".projectContent__projectDetail").removeClass("active")
-        $(".projectContent__projectItem").removeClass("active")
-    })
 };

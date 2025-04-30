@@ -93,16 +93,6 @@ html {
     font-size: 0.52vw;
   }
 }
-@media only screen and (max-width: 1600px) {
-  html {
-    font-size: 0.66vw;
-  }
-}
-@media only screen and (max-width: 1280px) {
-  html {
-    font-size: 0.68vw;
-  }
-}
 @media only screen and (max-width: 768px) {
   html {
     font-size: 1.302vw;
@@ -160,18 +150,23 @@ button {
 
 header {
   width: 30rem;
-  border: solid 0.1rem #000;
+  border: solid 0.1rem #a87676;
   font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1rem;
   padding: 1rem 0;
   text-align: center;
   border-radius: 2.5rem;
   margin: 1vh auto 9.4vh;
   text-transform: uppercase;
   position: relative;
+  background: -webkit-linear-gradient(left, #a87676, #ca8787, #e1acac, #ffd0d0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 header::after {
   content: "";
-  border-right: solid 0.1rem #000;
+  border-right: solid 0.1rem #a87676;
   height: 1vh;
   position: absolute;
   top: -1vh;
@@ -179,7 +174,7 @@ header::after {
 }
 header::before {
   content: "";
-  border-left: solid 0.1rem #000;
+  border-left: solid 0.1rem #a87676;
   height: 1vh;
   position: absolute;
   top: -1vh;
@@ -193,7 +188,7 @@ header::before {
   left: -30rem;
   width: 30rem;
   height: 100vh;
-  background-color: #c38888;
+  background-image: linear-gradient(to bottom, #921a40, #c75b7a, #d9abab, #f4d9d0);
   z-index: 99;
   box-shadow: 0 0 0.5rem 0.1rem #c38888;
   display: flex;
@@ -278,10 +273,12 @@ button.closeSideBar.show {
   font-size: 6.4rem;
   margin-bottom: 1rem;
   opacity: 0;
+  color: #fff;
 }
 .homeContent__homeItem h6 {
   font-size: 3.6rem;
   opacity: 0;
+  color: #fff;
 }
 .homeContent__homeItem.homeAvatar {
   padding: 2.5rem 5rem;
@@ -325,7 +322,7 @@ button.closeSideBar.show {
   transition: all ease-in-out 0.5s;
 }
 .aboutContent .infoStage {
-  border: solid 1px #333;
+  border: solid 1px #fb9590;
   border-radius: 2.5rem;
   padding: 2.5rem;
   background-color: #fff;
@@ -338,6 +335,7 @@ button.closeSideBar.show {
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 5rem;
+  color: #fb9590;
 }
 .aboutContent .infoContent {
   display: block;
@@ -348,6 +346,7 @@ button.closeSideBar.show {
 .aboutContent .infoContent h4 {
   font: bold 2.5rem/3rem "WenKai-B";
   margin-bottom: 1rem;
+  color: #fb9590;
 }
 .aboutContent .infoContent p {
   font-size: 2rem;
@@ -358,6 +357,7 @@ button.closeSideBar.show {
   justify-content: flex-start;
   flex-direction: row;
   font-family: "WenKai";
+  color: #FFBB94;
 }
 .aboutContent .infoContent p:not(:last-child) {
   margin-bottom: 0.5rem;
@@ -373,6 +373,7 @@ button.closeSideBar.show {
 .aboutContent .infoContent p i img {
   width: auto;
   height: 2rem;
+  filter: invert(62%) sepia(29%) saturate(638%) hue-rotate(314deg) brightness(103%) contrast(97%);
 }
 .aboutContent .infoContent.indent p {
   text-indent: 2.5rem;
@@ -381,7 +382,7 @@ button.closeSideBar.show {
   content: "";
   width: 0.5rem;
   height: 0.5rem;
-  background-color: #333;
+  background-color: #fb9590;
   border-radius: 50%;
   position: absolute;
   top: 1rem;
@@ -414,6 +415,7 @@ button.closeSideBar.show {
   width: 100% !important;
   transform: translate3d(0, 0, 0);
   transition: transform 1s, opacity 1s;
+  background-color: #e9e9e9;
 }
 .aboutContent .slick-snext,
 .aboutContent .slick-sprev,
@@ -439,6 +441,9 @@ button.closeSideBar.show {
   top: 50%;
   transform: translateY(-50%);
   z-index: 9;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 0.25rem;
 }
 .aboutContent .slick-arrow.slick-next {
   left: 100rem;
@@ -491,58 +496,178 @@ button.closeSideBar.show {
   padding: 5rem 10rem;
   overflow-y: auto;
   position: relative;
-}
-.projectContent__projectGroup {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
-  margin-bottom: 3.5rem;
-  column-gap: 26.7rem;
 }
-.projectContent__projectGroup:nth-child(even) {
-  justify-content: flex-end;
+.projectContent__projectHead {
+  width: 10rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
 }
-.projectContent__projectGroup:nth-last-child(2) {
-  margin-bottom: 0;
-}
-.projectContent__projectItem {
+.projectContent__projectHead::before {
+  content: "";
+  position: absolute;
+  width: 0.5rem;
+  height: 100%;
   background-color: #fff;
-  width: 15rem;
-  height: 15rem;
-  border-radius: 2.5rem;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+.projectContent__projectBody {
+  width: calc(100% - 10rem);
+  height: 100%;
+  margin-left: -5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5rem;
+}
+.projectContent__projectPopup {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  padding: 2rem;
+}
+
+.projectHead__type {
+  background-color: #fff;
+  border-radius: 2rem;
+  width: 10rem;
+  height: 35%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  cursor: pointer;
-  transition: all 0.5s linear;
+  padding: 0 3rem;
   position: relative;
-  opacity: 0;
 }
-.projectContent__projectItem:hover {
-  border-radius: 50%;
+.projectHead__type h3 {
+  font: 600 1.5rem "Segoe-UI";
+  letter-spacing: 0.25rem;
+  color: #fb9590;
+  text-align: center;
+  line-height: 2;
 }
-.projectContent__projectItem.active {
-  border-radius: 50%;
-}
-.projectContent__projectDetail {
+.projectHead__type::after {
+  content: "";
   position: absolute;
-  width: calc(100% - 1rem);
-  height: calc(100% - 1rem);
-  top: 0.5rem;
-  right: 0.5rem;
-  opacity: 0;
-  z-index: -99;
-  transform: translateX(-5rem);
-  transition: transform 1s ease-in-out;
+  top: 50%;
+  left: 100%;
+  width: 0;
+  height: 0;
+  border-top: 11rem solid transparent;
+  border-bottom: 11rem solid transparent;
+  border-left: 2.5rem solid #fff;
+  transform: translateY(-50%);
 }
-.projectContent__projectDetail.active {
-  z-index: 9;
-  opacity: 1;
-  transform: translateX(0rem);
+
+.projectBody__prjLine {
+  width: 100%;
+  height: 0.5rem;
+  background-color: #fff;
 }
-.projectContent__bg {
+.projectBody__prjList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 5rem;
+}
+.projectBody__prjItem {
+  width: 15rem;
+  height: 15rem;
+  background-color: #fff;
+  border-radius: 2rem;
+  padding: 3rem 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.projectBody__prjItem::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 7.25rem;
+  width: 0.5rem;
+  height: 5rem;
+  background-color: #fff;
+}
+.projectBody__prjItem::after {
+  content: "";
+  position: absolute;
+  top: calc(100% + 5rem - 0.5rem);
+  right: 6.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #FFBB94;
+  border-radius: 50%;
+}
+.projectBody__prjItem .projectName {
+  font-family: "Segoe-UI";
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  color: #fb9590;
+  letter-spacing: 0.25rem;
+}
+.projectBody__prjItem button {
+  width: 100%;
+  background-color: #fb9590;
+  font-family: "Segoe-UI";
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.5;
+  border: solid 0.1rem #fb9590;
+  color: #fff;
+  border-radius: 1.5rem;
+  letter-spacing: 0.25rem;
+}
+.projectBody__prjItem button:hover,
+.projectBody__prjItem button:focus {
+  background-color: #fff;
+  color: #fb9590;
+}
+.projectBody__prjItem.bottom::before {
+  content: "";
+  position: absolute;
+  top: -5rem;
+  right: 7.25rem;
+  width: 0.5rem;
+  height: 5rem;
+  background-color: #fff;
+}
+.projectBody__prjItem.bottom::after {
+  content: "";
+  position: absolute;
+  top: -6rem;
+  right: 6.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #FFBB94;
+  border-radius: 50%;
+}
+
+.projectPopup {
+  display: none;
+}
+.projectPopup__bg {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -551,76 +676,66 @@ button.closeSideBar.show {
   background-color: #000;
   opacity: 0.25;
   z-index: 2;
-  border-radius: 1.5rem;
 }
-.projectContent__detailInner {
-  width: 65%;
+.projectPopup__content {
+  width: 80%;
   height: 100%;
+  z-index: 3;
+  position: relative;
   background-color: #fff;
   border-radius: 1.5rem;
-  position: relative;
-  left: 0;
-  z-index: 5;
   transition: all 0.5s linear;
   padding: 7rem 5rem;
 }
-.projectContent__detailInner .closePopPrj {
+.projectPopup__close {
   width: 4rem;
-  height: 4rem;
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 2rem;
+  right: 2rem;
 }
-.projectContent__detailInner.right {
-  left: 35%;
-}
-.projectContent__detailContent {
-  height: 100%;
-}
-.projectContent__controlBtn {
-  position: absolute;
-  top: 50%;
-  right: -25rem;
-  transform: translateY(-50%);
-  animation: moveLeftPrj 1s ease-in-out forwards;
-}
-.projectContent__detailInner.right .projectContent__controlBtn {
-  animation: moveRightPrj 1s ease-in-out forwards;
-}
-
-.detailContent h2, .detailContent h4 {
-  font: bold 4.5rem/5rem "Segoe-UI";
-}
-.detailContent h4 {
-  font-size: 2.5rem;
-  font-weight: 3.5rem;
+.projectPopup .prjTitle {
+  font-family: "Segoe-UI";
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #fb9590;
+  text-align: center;
   margin-bottom: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
 }
-.detailContent p, .detailContent ul li {
-  font: 400 2.5rem "WenKai";
+.projectPopup .prjLink {
+  font-family: "Segoe-UI";
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1;
+  margin-right: 4rem;
+  text-decoration: underline;
 }
-.detailContent ul {
-  height: 75%;
-  overflow: auto;
-}
-.detailContent ul li {
-  position: relative;
-  text-indent: 2.5rem;
+.projectPopup h6 {
+  font-family: "Segoe-UI";
   font-size: 2rem;
-  font-family: "WenKai";
+  font-weight: 600;
+  line-height: 1;
+  color: #fb9590;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
 }
-.detailContent ul li:not(:last-child) {
+.projectPopup .prjList {
+  padding-left: 2rem;
+  list-style: circle;
+}
+.projectPopup .prjList li {
+  font-family: "Segoe-UI";
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #FFBB94;
   margin-bottom: 0.5rem;
 }
-.detailContent ul li::before {
-  content: "";
-  width: 0.5rem;
-  height: 0.5rem;
-  background-color: #333;
-  border-radius: 50%;
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
+
+.projectPopup.show {
+  display: flex;
 }
 
 /* animation */
@@ -741,6 +856,10 @@ button.closeSideBar.show {
 }
 .detailList__detail p:not(:last-child) {
   margin-bottom: 1.2rem;
+}
+
+.listExpBtn {
+  color: #fff;
 }
 
 @keyframes bgOpening {
@@ -914,7 +1033,7 @@ button.closeSideBar.show {
   top: 50%;
   left: -7rem;
   transform: translateY(-50%) rotate(-90deg);
-  color: #000;
+  color: #fb9590;
   z-index: 9;
   background-color: transparent;
   text-transform: uppercase;
@@ -930,6 +1049,13 @@ button.closeSideBar.show {
   width: 2rem;
   height: 2rem;
   margin-left: 0.5rem;
+}
+.menuBtn span img {
+  filter: invert(62%) sepia(29%) saturate(638%) hue-rotate(314deg) brightness(103%) contrast(97%);
+}
+
+.content {
+  background-image: linear-gradient(to left, #a87676, #ca8787, #e1acac, #ffd0d0);
 }
 
 /* animation start */
