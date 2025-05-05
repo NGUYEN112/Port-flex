@@ -295,11 +295,13 @@ button.closeSideBar.show {
     width: 100%;
   }
   .homeContent__homeItem h2 {
-    font-size: 4rem;
+    font-size: 7rem;
     color: #fb9590;
+    margin-bottom: 3rem;
+    text-align: center;
   }
   .homeContent__homeItem h6 {
-    font-size: 2.4rem;
+    font-size: 4.2rem;
     color: #FFBB94;
   }
   .homeContent__homeItem.homeTitle {
