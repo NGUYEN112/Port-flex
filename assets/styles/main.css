@@ -1207,20 +1207,20 @@ button.closeSideBar.show {
     overflow: hidden;
   }
   header {
-    width: 40%;
-    font-size: 2.5rem;
-    border-width: 0.2rem;
+    width: 50%;
+    font-size: 3.5rem;
+    border-width: 0.3rem;
     margin-bottom: 5vh;
   }
   .hambuger {
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    top: 3rem;
+    right: 3rem;
     z-index: 999;
   }
   .hambuger .bar {
-    width: 3rem;
-    border-bottom: solid 0.3rem #a87676;
+    width: 5rem;
+    border-bottom: solid 0.5rem #a87676;
     transition: all ease-in-out 0.5s;
   }
   .hambuger .bar:not(:last-child) {
@@ -1230,7 +1230,7 @@ button.closeSideBar.show {
     border-color: #fff;
   }
   .hambuger.active .bar:nth-child(1) {
-    transform: translateY(1.1rem) rotate(45deg);
+    transform: translateY(1.6rem) rotate(45deg);
   }
   .hambuger.active .bar:nth-child(2) {
     opacity: 0;
@@ -1242,12 +1242,24 @@ button.closeSideBar.show {
     left: -100vw;
     width: 100vw;
   }
+  .sideBar .navLink:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+  .sideBar .navLink a {
+    font-size: 3rem;
+  }
+  .sideBar__contact li {
+    width: 6rem;
+    height: 6rem;
+  }
+  .sideBar__contact img {
+    width: 4.5rem;
+  }
   .sideBar.extend {
     left: 0;
   }
   .container {
     width: 95vw;
-    height: 85.65vh;
   }
 }
 /* animation start */
