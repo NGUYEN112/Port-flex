@@ -26,6 +26,7 @@ html {
 body {
     width: 100%;
     margin: 0 auto;
+    padding: 1rem 0 0;
     position: relative;
     height: 100vh;
     min-height: 600px;
@@ -47,7 +48,7 @@ body {
 
 ::-webkit-scrollbar-thumb
 {
-    background-color: #333;
+    background-color: $primaryTextColor;
     border-radius: .5rem;
     // border: 2px solid #eeeeee;
 }
@@ -89,7 +90,7 @@ header {
     padding: 1rem 0;
     text-align: center;
     border-radius: 2.5rem;
-    margin: 1vh auto 9.4vh;
+    margin: 0 auto 9.4vh;
     text-transform: uppercase;
     position: relative;
     background: -webkit-linear-gradient( left,#a87676,#ca8787, #e1acac, #ffd0d0);
@@ -98,17 +99,17 @@ header {
     &::after {
         content: "";
         border-right: solid .1rem #a87676;
-        height: 1vh;
+        height: 1rem;
         position: absolute;
-        top: -1vh;
+        top: -1rem;
         right: 3rem;
     }
     &::before {
         content: "";
         border-left: solid .1rem #a87676;
-        height: 1vh;
+        height: 1rem;
         position: absolute;
-        top: -1vh;
+        top: -1rem;
         left: 3rem;
     }
 }
@@ -235,6 +236,75 @@ button.closeSideBar.show{
     background-image: linear-gradient(to left, #a87676,#ca8787, #e1acac, #ffd0d0);
 
 }
+
+.sp {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .sp {
+        display: block;
+    }
+    .pc {
+        display: none;
+    }
+    body {
+      width: 100vw;
+      overflow: hidden;
+      
+    }
+  
+    header {
+      width: 40%;
+      font-size: 2.5rem;
+      border-width: .2rem;
+      margin-bottom: 5vh;
+    }
+
+    .hambuger {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        z-index: 999;
+        .bar {
+            width: 3rem;
+            border-bottom: solid .3rem #a87676;
+            transition: all ease-in-out .5s;
+            
+        }
+        .bar:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+    }
+    .hambuger.active {
+        .bar {
+            border-color: #fff;
+            &:nth-child(1) {
+                transform: translateY(1.1rem) rotate(45deg)
+            }
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            &:nth-child(3) {
+                transform: translateY(-0.3rem) rotate(-45deg)
+            }
+        }
+    }
+
+    .sideBar {
+        left: -100vw;
+        width: 100vw;
+    }
+    .sideBar.extend {
+        left: 0;
+    }
+
+    .container {
+        width: 95vw;
+        height: 85.65vh;
+    }
+}
+  
 
 
 /* animation start */

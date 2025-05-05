@@ -4,93 +4,6 @@
     overflow-y: auto;
     position: relative;
     @include flex(center,flex-start);
-    // &__projectGroup {
-    //     @include flex(center, flex-start);
-    //     margin-bottom: 3.5rem;
-    //     column-gap: 26.7rem;
-    //     &:nth-child(even) {
-    //         justify-content: flex-end;
-    //     }
-    //     &:nth-last-child(2) {
-    //         margin-bottom: 0;
-    //     }
-    // }
-    // &__projectItem {
-    //     background-color: #fff;
-    //     @include size(15rem);
-    //     border-radius: 2.5rem;
-    //     @include flex(center,center);
-    //     cursor: pointer;
-    //     transition: all .5s linear;
-    //     position: relative;
-    //     opacity: 0;
-    //     &:hover {
-    //         border-radius: 50%;
-    //     }
-    // }
-    // &__projectItem.active {
-    //     border-radius: 50%;
-    // }
-    // &__projectDetail{
-    //     position: absolute;
-    //     @include size(calc(100% - 1rem));
-    //     top: .5rem;
-    //     right: .5rem;
-    //     opacity: 0;
-    //     z-index: -99;
-    //     transform: translateX(-5rem);
-    //     transition: transform 1s ease-in-out;
-    // }
-    // &__projectDetail.active {
-    //     z-index: 9;
-    //     opacity: 1;
-    //     transform: translateX(0rem);
-    // }
-    // &__bg {
-    //     position: absolute;
-    //     @include size(100%);
-    //     top: 0;
-    //     left: 0;
-    //     background-color: #000;
-    //     opacity: .25;
-    //     z-index: 2;
-    //     border-radius: 1.5rem
-    // }
-    // &__detailInner {
-    //     @include size(65%,100%);
-    //     background-color: #fff;
-    //     border-radius: 1.5rem;
-    //     position: relative;
-    //     left: 0;
-    //     z-index: 5;
-    //     transition: all .5s linear;
-    //     padding: 7rem 5rem;
-    // }
-    // &__detailInner .closePopPrj {
-    //     @include size(4rem);
-    //     position: absolute;
-    //     top: 1rem;
-    //     right: 1rem;
-    // }
-    // &__detailInner.right {
-    //     left: 35%;
-    // }
-
-    // &__detailContent {
-    //     height: 100%;
-    // }
-    // &__controlBtn {
-    //     position: absolute;
-    //     top: 50%;
-    //     right: -25rem;
-    //     transform: translateY(-50%);
-    //     animation: moveLeftPrj 1s ease-in-out forwards;
-    // }
-    // &__detailInner.right {
-    //     .projectContent__controlBtn {
-    //         animation: moveRightPrj 1s ease-in-out forwards;
-    //     }
-    // }
     &__projectHead {
         @include size(10rem, 100%);
         @include flex(center,space-between, column);
@@ -287,41 +200,90 @@
     display: flex;
 }
 
-// .detailContent {
-//     h2,h4 {
-//         font: bold 4.5rem/5rem "Segoe-UI";
-//     }
-//     h4 {
-//         font-size: 2.5rem;
-//         font-weight: 3.5rem;
-//         margin-bottom: 5rem;
-//     }
-//     p, ul li {
-//         font: 400 2.5rem "WenKai";
-//     }
-//     ul {
-//         height: 75%;
-//         overflow: auto;
-//     }
-//     ul li {
-//         position: relative;
-//         text-indent: 2.5rem;
-//         font-size: 2rem;
-//         font-family: "WenKai";
-//     }
-//     ul li:not(:last-child) {
-//         margin-bottom: .5rem;
-//     }
-//     ul li::before {
-//         content: "";
-//         @include size(.5rem);
-//         background-color: #333;
-//         border-radius: 50%;
-//         position: absolute;
-//         top: 1rem;
-//         left: 1rem;
-//     }
-// }
+@media screen and (max-width: 1200px) {
+    .projectContent {
+        padding: 2rem 2rem;
+        flex-direction: column;
+        &__projectHead {
+            flex-direction: row;
+            align-items: flex-start;
+            width: 100%;
+            height: auto;
+            margin-bottom: 5rem;
+        }
+        &__projectHead::before {
+           content: none;
+        }
+        &__projectBody {
+            width: 100%;
+            flex-direction: row;
+            margin-left: 0;
+            gap: 1rem;
+            align-items: flex-start
+        }
+    }
+    .projectHead {
+        &__type {
+            @include size(49%, 10rem);
+            
+        }
+        &__type h3 {
+            font-size: 2rem;
+        }
+        &__type::after {
+            top: 100%;
+            left: 50%;
+            width: 0; 
+            height: 0; 
+            border-left: 15rem solid transparent;
+            border-right: 15rem solid transparent; 
+            
+            border-top:2.5rem solid #fff; 
+            transform: translateX(-50%);
+        }
+       
+    }
+    .projectBody {
+        &__prjList {
+            width: 50%;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem 0;
+        }
+        &__prjItem::before,
+        &__prjItem::after,
+        &__prjItem.bottom::before,
+        &__prjItem.bottom::after {
+            content: none;
+        }
+        &__prjLine {
+            height: 100%;
+            width: .1rem;
+        }
+    }
+
+    .projectPopup {
+        &__content{
+            width: 100%;
+            padding: 5rem 2rem;
+        }
+        &__close {
+            width: 6rem;
+        }
+        .prjTitle {
+            font-size: 4rem;
+        }
+        .prjLink {
+            font-size: 2rem;
+        }
+        h6 {
+            font-size: 2.5rem;
+        }
+        .prjList li {
+            font-size: 2rem;
+        }
+    }
+}
 
 /* animation */
 .projectContent.activeAni {

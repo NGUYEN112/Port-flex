@@ -71,6 +71,24 @@
     }
 }
 
+@media screen  and (max-width: 768px) {
+    .expContent {
+        &__detailList {
+            max-width: 100%;
+        }
+    }
+    .detailList {
+        &__title {
+            font-size: 6rem;
+            line-height: 6.5rem;
+        }
+        &__detail {
+            font-size: 2.6rem;
+            line-height: 3rem;
+        }
+    }
+}
+
 .listExpBtn {
     color: #fff;
 }

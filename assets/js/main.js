@@ -1,19 +1,39 @@
 window.onload = function() { 
     $(".closeSideBarBtn").on("click", function() {
+        closeSideBar()
+    })
+
+    $(".hambuger").on("click", function() {
+        if($(this).hasClass("active")) {
+            closeSideBar()
+        }else {
+            openSideBar()
+        }
+        $(this).toggleClass("active")
+    })
+    
+    $(".menuBtn").on("click", function() {
+        openSideBar()
+    })
+
+    function closeSideBar() {
         $(".sideBar").removeClass("extend")
         $(".container__inner").removeClass("limitSide")
         $(".closeSideBar").removeClass("show")
-    })
+    }
 
-    $(".menuBtn").on("click", function() {
+    function openSideBar() {
         $(".sideBar").addClass("extend")
         $(".container__inner").addClass("limitSide")
-        $(".closeSideBar").addClass("show")
-    })
+        if(window.innerWidth > 768) {            
+            $(".closeSideBar").addClass("show")
+        }
+    }
 
 
     window.addEventListener('hashchange', function() {
         checkHash() 
+        $(".hambuger").trigger("click");
     });
     
     function checkHash() {
@@ -129,6 +149,14 @@ window.onload = function() {
         customPaging: function(slider, i) {
           return '';
         },
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    variableWidth: true
+                }
+            }
+        ]
         /*infinite: false,*/
       });
     /* end slide */
