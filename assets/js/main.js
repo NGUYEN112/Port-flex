@@ -168,46 +168,54 @@ window.onload = function() {
             "title": "Tomosia Da Nang",
             "logo": "/assets",
             "desc": [
-                "Learned and worked with Nuxt.js and Vue.js in a QR code-related project",
+                "Trained and worked with Vue along with NuxtJs.",
+                "Improved teamwork skills, practiced discipline, and enhanced the ability to self-learn new technologies.",
+                "Acquired more experience in remote work."
             ]
         },
         "exp-2" : {
             "title": "Gosu Hue",
             "logo": "/assets",
             "desc": [
-                "Strengthened knowledge and experience with Vue.js through game event website projects",
-                "Improved understanding and experience with APIs",
+                "Enhanced knowledge and skills in VueJs through short-term projects related to game events.",
+                "Gained more experience working with APIs.",
+                "Improved ability to handle high-pressure work environments."
             ]
         },
         "exp-3" : {
             "title": "DGW Asia Hue Brand",
             "logo": "/assets",
             "desc": [
-                "Gained more experience using design tools such as: AI, Xd, InDesign, Figma",
-                "Received training and learned about TypeScript and React.js",
+                "Gained additional experience using design software such as Adobe XD, InDesign, Figma, and Illustrator.",
+                "Learned and improved skills in ReactJs, TypeScript.",
+                "Optimized UI/UX, minimizing layout errors and cutting mistakes."
             ]
         },
         "exp-4" : {
             "title": "Tomosia Da Nang",
             "logo": "/assets",
             "desc": [
-                "Learned and worked with Nuxt.js and Vue.js in a QR code-related project",
+                "Trained and worked with Vue along with NuxtJs.",
+                "Improved teamwork skills, practiced discipline, and enhanced the ability to self-learn new technologies.",
+                "Acquired more experience in remote work."
             ]
         },
         "exp-5" : {
             "title": "Gosu Hue",
             "logo": "/assets",
             "desc": [
-                "Strengthened knowledge and experience with Vue.js through game event website projects",
-                "Improved understanding and experience with APIs",
+                "Enhanced knowledge and skills in VueJs through short-term projects related to game events.",
+                "Gained more experience working with APIs.",
+                "Improved ability to handle high-pressure work environments."
             ]
         },
         "exp-6" : {
             "title": "DGW Asia Hue Brand",
             "logo": "/assets",
             "desc": [
-                "Gained more experience using design tools such as: AI, Xd, InDesign, Figma",
-                "Received training and learned about TypeScript and React.js",
+                "Gained additional experience using design software such as Adobe XD, InDesign, Figma, and Illustrator.",
+                "Learned and improved skills in ReactJs, TypeScript.",
+                "Optimized UI/UX, minimizing layout errors and cutting mistakes."
             ]
         }
     }
